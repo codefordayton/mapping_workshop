@@ -1,0 +1,23 @@
+{
+  "name": "mapping_workshop",
+  "version": "1.0.0",
+  "description": "## Presented By [Code for Dayton](http://codefordayton.org/), [Dayton Data Visualization](http://www.meetup.com/daytondv), [Girl Develop It](http://www.meetup.com/Girl-Develop-It-Dayton)",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --config bs-config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codefordayton/mapping_workshop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codefordayton/mapping_workshop/issues"
+  },
+  "homepage": "https://github.com/codefordayton/mapping_workshop#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0"
+  }
+}
