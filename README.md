@@ -5,13 +5,18 @@
 [Dayton Data Visualization](http://www.meetup.com/daytondv),
 [Girl Develop It](http://www.meetup.com/Girl-Develop-It-Dayton)
 
-## Sponsored By
-
 ## Date
-TBD
+Saturday, September 10th, 2016
 
 ## Location
-TBD
+The Entrepreneurs Center
+
+## Cost
+$5.00 - Lunch Provided
+
+## Materials
+- Workshop Website
+- Starter Project (this repo)
 
 ## Agenda
     - Introduction to Web Mapping
@@ -22,6 +27,7 @@ TBD
     - Feature Data - polygons, geojson
     - Plugins - marker clusterer, awesome markers, others?
     - Other resources
+    - Civic Hacking & CfD
     - Data Sources - CfD data sources, open data
     - Workshop
         - Pick a data set and make a map!
