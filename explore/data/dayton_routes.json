@@ -1,0 +1,394 @@
+var routes={
+  "code": "DAY", 
+  "outbound": [
+    {
+      "lat": "35.214", 
+      "code": "CLT", 
+      "lon": "-80.943139", 
+      "name": "Charlotte Douglas Intl"
+    }, 
+    {
+      "lat": "38.852083", 
+      "code": "DCA", 
+      "lon": "-77.037722", 
+      "name": "Ronald Reagan Washington Natl"
+    }, 
+    {
+      "lat": "32.896828", 
+      "code": "DFW", 
+      "lon": "-97.037997", 
+      "name": "Dallas Fort Worth Intl"
+    }, 
+    {
+      "lat": "40.777245", 
+      "code": "LGA", 
+      "lon": "-73.872608", 
+      "name": "La Guardia"
+    }, 
+    {
+      "lat": "41.978603", 
+      "code": "ORD", 
+      "lon": "-87.904842", 
+      "name": "Chicago Ohare Intl"
+    }, 
+    {
+      "lat": "39.871944", 
+      "code": "PHL", 
+      "lon": "-75.241139", 
+      "name": "Philadelphia Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "42.212444", 
+      "code": "DTW", 
+      "lon": "-83.353389", 
+      "name": "Detroit Metro Wayne Co"
+    }, 
+    {
+      "lat": "40.777245", 
+      "code": "LGA", 
+      "lon": "-73.872608", 
+      "name": "La Guardia"
+    }, 
+    {
+      "lat": "44.881956", 
+      "code": "MSP", 
+      "lon": "-93.221767", 
+      "name": "Minneapolis St Paul Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "39.175361", 
+      "code": "BWI", 
+      "lon": "-76.668333", 
+      "name": "Baltimore Washington Intl"
+    }, 
+    {
+      "lat": "27.975472", 
+      "code": "TPA", 
+      "lon": "-82.53325", 
+      "name": "Tampa Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "41.411689", 
+      "code": "CLE", 
+      "lon": "-81.849794", 
+      "name": "Cleveland Hopkins Intl"
+    }, 
+    {
+      "lat": "39.861656", 
+      "code": "DEN", 
+      "lon": "-104.673178", 
+      "name": "Denver Intl"
+    }, 
+    {
+      "lat": "40.6925", 
+      "code": "EWR", 
+      "lon": "-74.168667", 
+      "name": "Newark Liberty Intl"
+    }, 
+    {
+      "lat": "38.944533", 
+      "code": "IAD", 
+      "lon": "-77.455811", 
+      "name": "Washington Dulles Intl"
+    }, 
+    {
+      "lat": "41.978603", 
+      "code": "ORD", 
+      "lon": "-87.904842", 
+      "name": "Chicago Ohare Intl"
+    }, 
+    {
+      "lat": "35.214", 
+      "code": "CLT", 
+      "lon": "-80.943139", 
+      "name": "Charlotte Douglas Intl"
+    }, 
+    {
+      "lat": "38.852083", 
+      "code": "DCA", 
+      "lon": "-77.037722", 
+      "name": "Ronald Reagan Washington Natl"
+    }, 
+    {
+      "lat": "32.896828", 
+      "code": "DFW", 
+      "lon": "-97.037997", 
+      "name": "Dallas Fort Worth Intl"
+    }, 
+    {
+      "lat": "40.777245", 
+      "code": "LGA", 
+      "lon": "-73.872608", 
+      "name": "La Guardia"
+    }, 
+    {
+      "lat": "41.978603", 
+      "code": "ORD", 
+      "lon": "-87.904842", 
+      "name": "Chicago Ohare Intl"
+    }, 
+    {
+      "lat": "39.871944", 
+      "code": "PHL", 
+      "lon": "-75.241139", 
+      "name": "Philadelphia Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "39.175361", 
+      "code": "BWI", 
+      "lon": "-76.668333", 
+      "name": "Baltimore Washington Intl"
+    }, 
+    {
+      "lat": "39.861656", 
+      "code": "DEN", 
+      "lon": "-104.673178", 
+      "name": "Denver Intl"
+    }, 
+    {
+      "lat": "28.429394", 
+      "code": "MCO", 
+      "lon": "-81.308994", 
+      "name": "Orlando Intl"
+    }, 
+    {
+      "lat": "27.975472", 
+      "code": "TPA", 
+      "lon": "-82.53325", 
+      "name": "Tampa Intl"
+    }
+  ], 
+  "name": "James M Cox Dayton Intl", 
+  "inbound": [
+    {
+      "lat": "35.214", 
+      "code": "CLT", 
+      "lon": "-80.943139", 
+      "name": "Charlotte Douglas Intl"
+    }, 
+    {
+      "lat": "38.852083", 
+      "code": "DCA", 
+      "lon": "-77.037722", 
+      "name": "Ronald Reagan Washington Natl"
+    }, 
+    {
+      "lat": "32.896828", 
+      "code": "DFW", 
+      "lon": "-97.037997", 
+      "name": "Dallas Fort Worth Intl"
+    }, 
+    {
+      "lat": "40.777245", 
+      "code": "LGA", 
+      "lon": "-73.872608", 
+      "name": "La Guardia"
+    }, 
+    {
+      "lat": "41.978603", 
+      "code": "ORD", 
+      "lon": "-87.904842", 
+      "name": "Chicago Ohare Intl"
+    }, 
+    {
+      "lat": "39.871944", 
+      "code": "PHL", 
+      "lon": "-75.241139", 
+      "name": "Philadelphia Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "42.212444", 
+      "code": "DTW", 
+      "lon": "-83.353389", 
+      "name": "Detroit Metro Wayne Co"
+    }, 
+    {
+      "lat": "40.777245", 
+      "code": "LGA", 
+      "lon": "-73.872608", 
+      "name": "La Guardia"
+    }, 
+    {
+      "lat": "44.881956", 
+      "code": "MSP", 
+      "lon": "-93.221767", 
+      "name": "Minneapolis St Paul Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "39.175361", 
+      "code": "BWI", 
+      "lon": "-76.668333", 
+      "name": "Baltimore Washington Intl"
+    }, 
+    {
+      "lat": "27.975472", 
+      "code": "TPA", 
+      "lon": "-82.53325", 
+      "name": "Tampa Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "41.411689", 
+      "code": "CLE", 
+      "lon": "-81.849794", 
+      "name": "Cleveland Hopkins Intl"
+    }, 
+    {
+      "lat": "39.861656", 
+      "code": "DEN", 
+      "lon": "-104.673178", 
+      "name": "Denver Intl"
+    }, 
+    {
+      "lat": "40.6925", 
+      "code": "EWR", 
+      "lon": "-74.168667", 
+      "name": "Newark Liberty Intl"
+    }, 
+    {
+      "lat": "38.944533", 
+      "code": "IAD", 
+      "lon": "-77.455811", 
+      "name": "Washington Dulles Intl"
+    }, 
+    {
+      "lat": "41.978603", 
+      "code": "ORD", 
+      "lon": "-87.904842", 
+      "name": "Chicago Ohare Intl"
+    }, 
+    {
+      "lat": "35.214", 
+      "code": "CLT", 
+      "lon": "-80.943139", 
+      "name": "Charlotte Douglas Intl"
+    }, 
+    {
+      "lat": "38.852083", 
+      "code": "DCA", 
+      "lon": "-77.037722", 
+      "name": "Ronald Reagan Washington Natl"
+    }, 
+    {
+      "lat": "32.896828", 
+      "code": "DFW", 
+      "lon": "-97.037997", 
+      "name": "Dallas Fort Worth Intl"
+    }, 
+    {
+      "lat": "40.777245", 
+      "code": "LGA", 
+      "lon": "-73.872608", 
+      "name": "La Guardia"
+    }, 
+    {
+      "lat": "41.978603", 
+      "code": "ORD", 
+      "lon": "-87.904842", 
+      "name": "Chicago Ohare Intl"
+    }, 
+    {
+      "lat": "39.871944", 
+      "code": "PHL", 
+      "lon": "-75.241139", 
+      "name": "Philadelphia Intl"
+    }, 
+    {
+      "lat": "33.636719", 
+      "code": "ATL", 
+      "lon": "-84.428067", 
+      "name": "Hartsfield Jackson Atlanta Intl"
+    }, 
+    {
+      "lat": "39.175361", 
+      "code": "BWI", 
+      "lon": "-76.668333", 
+      "name": "Baltimore Washington Intl"
+    }, 
+    {
+      "lat": "39.861656", 
+      "code": "DEN", 
+      "lon": "-104.673178", 
+      "name": "Denver Intl"
+    }, 
+    {
+      "lat": "28.429394", 
+      "code": "MCO", 
+      "lon": "-81.308994", 
+      "name": "Orlando Intl"
+    }, 
+    {
+      "lat": "27.975472", 
+      "code": "TPA", 
+      "lon": "-82.53325", 
+      "name": "Tampa Intl"
+    }
+  ], 
+  "lon": "-84.219375", 
+  "lat": "39.902375"
+};
