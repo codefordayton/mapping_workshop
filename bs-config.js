@@ -1,4 +1,5 @@
 'use strict';
+
 /*
  |--------------------------------------------------------------------------
  | Browser-sync config file
@@ -15,8 +16,8 @@
 module.exports = {
     'files': [
         '**/*.html',
-        'scripts/**/*',
-        'styles/**/*',
+        '**/*.js',
+        '**/*.css',
         'images/**/*'
     ],
     'watchOptions': {
