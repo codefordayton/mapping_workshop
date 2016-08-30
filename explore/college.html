@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LotLinker Example</title>
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../lib/leaflet-0.7/leaflet.css" />
+  <link rel="stylesheet" href="../lib/leaflet.markercluster/MarkerCluster.css" />
+  <link rel="stylesheet" href="../lib/leaflet.markercluster/MarkerCluster.Default.css" />
+</head>
+<body>
+  <div id="mapid" style="width: 600px; height: 400px"></div>
+  <textarea rows="20" id="output" style="width: 600px; height: 400px"></textarea>
+  <br />
+  <a href="https://collegescorecard.ed.gov/data/documentation/">
+    College Scorecard Data Documentation
+  </a>
+  | 
+  <a href="https://api.data.gov/signup/">
+    Get your API Key!
+  </a>
+
+  <script src="../lib/leaflet-0.7/leaflet.js"></script>
+  <script src="../lib/leaflet.markercluster/leaflet.markercluster-src.js"></script>
+  <script src="../lib/leaflet.ajax.js"></script>
+  <script>
+
+    var mymap = L.map('mapid').setView([39.758948, -104.191607], 2);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+      maxZoom: 18,
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+        '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: 'mapbox.streets'
+    }).addTo(mymap);
+
+    var API_URL = 'https://api.data.gov/ed/collegescorecard/v1/schools';
+    var API_KEY = 'SkCKQdjRbT4BakatLO7uAg9r8B3gTLiaZn4grKCK';
+
+    function lookupSchool(id) {
+      document.getElementById('output').value = '';
+      L.Util.ajax(API_URL + '?id=' + id + '&api_key=' + API_KEY).then(function(data) {
+        document.getElementById('output').value = JSON.stringify(data, null, 2);
+      });
+    }
+
+    function prettyPopup(props) {
+      return '<a href="http://' + props.url + '">' + props.name + '</a>' +
+             '<br />' +
+             '<button type="button" onclick="javascript:lookupSchool(' +
+             props.id + ')">Lookup!</button>';
+    }
+
+    var markerList = [];
+    L.Util.ajax('data/college_index.json').then(function(colleges) {
+      for (var i = 0; i < colleges.length; i++) {
+        var a = colleges[i];
+        var title = a.name;
+        var marker = L.marker(L.latLng(parseFloat(a.lat), parseFloat(a.lon)), { title: title});
+
+        marker.bindPopup(prettyPopup(a));
+        markerList.push(marker);
+      }
+      markers = L.markerClusterGroup();
+      markers.addLayers(markerList);
+      mymap.addLayer(markers);
+    });
+  </script>
+</body>
+</html>
+
