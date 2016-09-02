@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web Mapping Workshop</title>
+
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+
+        <!-- Prism (syntax highlighting) -->
+        <link rel="stylesheet" href="../lib/prism/prism.css" />
+        <script src="../lib/prism/prism.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="00_introductions.html">Introductions</a></li>
+                <li><a href="01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="03_devenv.html">Development Environment</a></li>
+                <li><a href="10_hellomap.html">Making a Map</a></li>
+                <li><a href="11_tilesources.html">Base Maps</a></li>
+                <li><a href="20_markers.html">Markers</a></li>
+                <li><a href="21_popups.html">Pop Ups</a><li>
+                <li><a href="30_linestrings.html">Line Data</a></li>
+                <li><a href="31_polygons.html">Polygons</a></li>
+                <li><a href="40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="41_heatmap.html">Plugins - Heatmap</a></li>
+                <!-- <li>Civic Hacking &amp; Code for Dayton</li>
+                <li>Data - Dayton</li>
+                <li>Data - National</li>
+                <li>Data - Global</li>
+                <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li> -->
+            </ul>
+        </nav>
+        <!-- Navigation End -->
+
+        <section class="content">
+            <h1>Development Environment</h1>
+
+            <p>
+                To get started, you'll need to check out the master branch of
+                the
+                <a href="https://github.com/codefordayton/mapping_workshop">mapping_workshop repository</a>
+                from GitHub. For those of you unfamiliar with git, you can
+                just download a zip file of the repository by selecting the
+                "Download Zip" option from the green "Clone or Download"
+                button on the right hand side of the page.
+                After it is downloaded, extract the contents and open the folder
+                in your editor of choice.
+            </p>
+
+            <p>
+                The starter project has everything you need to get started mapping.
+                To see the page as we're developing, you have two options:
+            </p>
+            <ol>
+                <li>
+                    <strong>NodeJS</strong>: There is a package.json provided for
+                    you along with a configuration file for BrowserSync. Open a
+                    terminal, change directories to the mapping_workshop folder,
+                    and execute the command
+                    <pre class="line-numbers language-bash">npm install</pre>
+                    Afer the dependencies are installed, run
+                    <pre class="line-numbers language-bash">npm start</pre>
+                    and open a browser to <a href="http://localhost:9000">http://localhost:9000</a>.
+                    This page is served by a tool called BrowserSync, which will
+                    synchronize any browsers looking at the page (useful for mobile device testing)
+                    as well as automatically reload the page when you make changes to the source files.
+                </li>
+                <li>
+                    <strong>Python</strong>: If your machine has python on it,
+                    you can quickly serve web pages by opening a terminal, change directories
+                    to the mapping_workshop folder, and execute the command
+                    <pre class="line-numbers language-bash">python -m SimpleHTTPServer</pre>
+                    Then, open a browser to <a href="http://localhost:8000">http://localhost:8000</a>
+                </li>
+            </ol>
+
+            <p>
+                Once you can open a web browser and see the starter project,
+                you'll be ready to move on to making maps! If you have problems,
+                raise your hand and a TA will be by to assist you.
+            </p>
+
+            <h2>Further Reading</h2>
+            <ul>
+                <li><a href="https://nodejs.org">NodeJS</a></li>
+                <li><a href="https://www.browsersync.io/">BrowserSync</a></li>
+                <li><a href="https://www.python.org/">Python</a></li>
+            </ul>
+
+            <div class="tutbuttons">
+                <a class="tutbutton" href="02_intro2leaflet.html">Previous</a>
+                <a class="tutbutton" href="10_hellomap.html">Next</a>
+            </div>
+
+        </section>
+
+    </body>
+</html>
