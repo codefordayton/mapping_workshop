@@ -1,63 +1,125 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Airport Example</title>
-  <meta charset="utf-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Web Mapping Workshop - Airport Data</title>
 
-  <link rel="stylesheet" href="../lib/leaflet-0.7/leaflet.css" />
-  <link rel="stylesheet" href="../lib/leaflet.markercluster/MarkerCluster.css" />
-  <link rel="stylesheet" href="../lib/leaflet.markercluster/MarkerCluster.Default.css" />
-</head>
-<body>
-  <div id="mapid" style="width: 600px; height: 400px"></div>
+        <link rel="stylesheet" href="../lib/leaflet-0.7/leaflet.css" />
+        <link rel="stylesheet" href="../lib/leaflet.markercluster/MarkerCluster.css" />
+        <link rel="stylesheet" href="../lib/leaflet.markercluster/MarkerCluster.Default.css" />
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+    </head>
+    <body>
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="00_introductions.html">Introductions</a></li>
+                <li><a href="01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="03_devenv.html">Development Environment</a></li>
+                <li><a href="10_hellomap.html">Making a Map</a></li>
+                <li><a href="11_tilesources.html">Base Maps</a></li>
+                <li><a href="20_markers.html">Markers</a></li>
+                <li><a href="21_popups.html">Pop Ups</a><li>
+                <li><a href="30_linestrings.html">Line Data</a></li>
+                <li><a href="31_polygons.html">Polygons</a></li>
+                <li><a href="40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="41_heatmap.html">Plugins - Heatmap</a></li>
+                <li><a href="cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
+                <li><a href="lotlinker.html">Data - Dayton</a></li>
+                <li><a href="national.html">Data - National</a></li>
+                <li><a href="global.html">Data - Global</a></li>
+                <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li>
+            </ul>
+        </nav>
+        <!-- Navigation End -->
 
-  <script src="../lib/leaflet-0.7/leaflet.js"></script>
-  <script src="../lib/leaflet.markercluster/leaflet.markercluster-src.js"></script>
-  <script src="data/dayton_routes.json"></script>
-  <script>
-    console.log('routes', routes);
-    var mymap = L.map('mapid').setView([39.758948, -84.191607], 4);
+        <section class="content">
+            <h1>Airport Data from OpenFlights.org</h1>
+            <div id="mapid" style="width: 100%; height: 400px"></div>
 
-    L.tileLayer("http://a.tile.stamen.com/watercolor/{z}/{x}/{y}.jpeg", {
-      maxZoom: 18,
-      attribution: [
-        'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ',
-        'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ',
-        'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ',
-        'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
-      ].join(""),
-      id: 'stamen.watercolor'
-    }).addTo(mymap);
+            <h2>Description</h2>
+            <p>This is a sparsely populated map that serves a few purposes:</p>
+            <ul>
+                <li>It introduces you to the <a href="http://openflights.org/">OpenFlights.org</a> data set.</li>
+                <li>It shows <a href="http://leafletjs.com/reference.html#polyline">polylines</a> in action.</li>
+                <li>It showcases the very pretty and unmaplike <a href="http://maps.stamen.com/watercolor/#12/37.7531/-122.3841">watercolor</a> basemap from <a href="http://stamen.com/">Stamen Design</a>.</li>
+                <li>It utilizes a data processing script to combine and filter the <a href="http://openflights.org/data.html#airport">airport</a> and <a href="http://openflights.org/data.html#route">route</a> data files into something we can use.</li>
+            </ul>
+            <h2>Data Source</h2>
+            <p>From their <a href="https://github.com/jpatokal/openflights">Github description</a>, OpenFlights.org is a:</p> <blockquote>Website for storing flight information, rendering paths on a zoomable world map and calculating statistics, with plenty of free airline, airport and route data.</blockquote>
+            <p>They freely share their data, but the <a href="http://openflights.org/data.html#license">license</a> has a share-alike clause that limits commercial use.</p>
+            <h2>Enhancements</h2>
+            <p>So many ways to improve this one!</p>
+            <ul>
+                <li>Usually maps with paths like these follow a <a href="http://mathworld.wolfram.com/GreatCircle.html">Great Circle arc</a>. Can you use a <a href="http://leafletjs.com/plugins.html#markers--renderers">Leaflet rendering plugin</a> to do the same here?</li>
+                <li>The routes shown here are outgoing from Dayton International Airport. Can you make the polylines directional?</li>
+                <li>Could you include inbound, outbound, and bi-directional routes? If so, how could you differentiate them?</li>
+                <li>How many routes can you show on the map? Does it bog down at some point?</li> 
+            </ul>
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="http://openflights.org/">OpenFlights.org</a></li>
+                <li><a href="http://openflights.org/data.html">OpenFlights.org Data</a></li>
+                <li><a href="#">TODO! Data Processing Script</a></li>
+            </ul>
+        </section>
+        <script src="../lib/leaflet-0.7/leaflet.js"></script>
+        <script src="../lib/leaflet.markercluster/leaflet.markercluster-src.js"></script>
+        <script src="data/dayton_routes.json"></script>
+        <script>
+            // center the map on Dayton, but give us enough room to see each line
+            var mymap = L.map('mapid').setView([39.758948, -84.191607], 4);
 
-    function prettyPopup(props) {
-      //console.log(props);
-      return '<h3>' + props.name + ' (' + props.code + ')</h3>';
-    }
+            // Pick a good looking set of base maps.
+            L.tileLayer("http://a.tile.stamen.com/watercolor/{z}/{x}/{y}.jpeg", {
+                maxZoom: 18,
+                attribution: [
+                    'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ',
+                    'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ',
+                    'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ',
+                    'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+                ].join(""),
+                id: 'stamen.watercolor'
+            }).addTo(mymap);
 
-    var homeLatLng = L.latLng(parseFloat(routes.lat), parseFloat(routes.lon));
-    var marker = L.marker(homeLatLng, {
-      title: routes.name + ' (' + routes.code + ')'
-    }).addTo(mymap);
-    marker.bindPopup(prettyPopup(routes));
-    marker.addTo(mymap);
-    for (var i = 0; i < routes.outbound.length; i++) {
-      var a = routes.outbound[i];
-      var title = a.name;
-      var awayLatLng = L.latLng(parseFloat(a.lat), parseFloat(a.lon))
-      var line = L.polyline([homeLatLng, awayLatLng], {
-        color: '#696'
-      });
-      line.bindPopup(prettyPopup(a));
-      line.addTo(mymap);
-      marker = L.marker(awayLatLng, {title: a.name + ' (' + a.code + ')'});
-      marker.bindPopup(prettyPopup(a));
-      marker.addTo(mymap);
-    }
+            // Clear up some clutter by putting your popup formatting into a function.
+            function formatTitle(props) {
+                return props.name + ' (' + props.code + ')';
+            }
 
-  </script>
-</body>
+            function formatPopup(props) {
+                return '<h3>' + formatTitle(props) + '</h3>';
+            }
+
+            // Get our home airport location
+            var homeLatLng = L.latLng(parseFloat(routes.lat), parseFloat(routes.lon));
+            // And create a marker for it.
+            var marker = L.marker(homeLatLng, {
+                title: formatTitle(routes)
+            });
+            marker.bindPopup(formatPopup(routes));
+            marker.addTo(mymap);
+
+            // Put the rest of the pins on the map and create polylines.
+            for (var i = 0; i < routes.outbound.length; i++) {
+                var a = routes.outbound[i];
+                var title = a.name;
+                var awayLatLng = L.latLng(parseFloat(a.lat), parseFloat(a.lon))
+                var line = L.polyline([homeLatLng, awayLatLng], {
+                    color: '#696'
+                });
+                line.bindPopup(formatPopup(a));
+                line.addTo(mymap);
+                marker = L.marker(awayLatLng, {title: formatTitle(a)});
+                marker.bindPopup(formatPopup(a));
+                marker.addTo(mymap);
+            }
+
+        </script>
+    </body>
 </html>
 
