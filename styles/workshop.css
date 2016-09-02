@@ -17,10 +17,10 @@ body {
     color: #212121;
     display: flex;
     flex-direction: row;
-}
-
-h1, h2, h3, h4, h5, h6, strong {
-    color: #455A64;
+    font-size: 16px;
+    /* Traditional Garamond-based serif stack */
+    font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+    line-height: 1.6;
 }
 
 a {
@@ -31,16 +31,40 @@ a:hover {
     color: #6ccf70;
 }
 
-p + p {
-    text-indent: 0;
-    margin-top: -0.5rem;
+h1, h2, h3, h4, h5, h6, strong {
+    color: #455A64;
+    /* Helvetica/Arial-based sans serif stack */
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+h1 {font-size: 300%;}
+h2 {font-size: 200%;}
+h3 {font-size: 150%;}
+
+
+hr {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #CFD8DC;
+    box-shadow: 0 1px 0 #fff;
+    clear: both;
+    height: 0px;
+    margin: 1.0em 0;
+}
+
+p {
+    margin: 1.0em 0;
+}
+strong {
+    font-weight: bold;
+}
+
 
 /** Navigation **/
 .navigation {
     background: #607D8B;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
+    /* Helvetica/Arial-based sans serif stack */
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 0.5em 0.25em;
     overflow-y: scroll;
     width: 20%;
@@ -62,6 +86,13 @@ p + p {
     flex: 1;
     padding: 1.0em;
     overflow-y: scroll;
+}
+.content img {
+    margin: 1.0em;
+}
+
+.float-left {
+    float: left;
 }
 
 .tutbuttons {
