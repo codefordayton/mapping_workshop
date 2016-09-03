@@ -38,9 +38,30 @@
             <h1>Earthquake Data from USGS</h1>
             <div id="mapid" style="width: 100%; height: 400px"></div>
             <h2>Description</h2>
+            <p>The United States Geological Survey (USGS) provides several realtime feeds of earthquake occurences. We're using a <a href="http://geojson.org/geojson-spec.html">GeoJSON</a> feed that contains all earthquakes in the past month with a magnitude greater than 2.5. We use this example to demonstrate:</p>
+            <ul>
+                <li>Consuming a remote GeoJSON data feed that contains data points.</li>
+                <li>Custom vector markers that change style based on the data source.</li>
+                <li>Styling markers with CSS.</li>
+            </ul>
+
             <h2>Data Source</h2>
+            <p>The USGS provide earthquake data in <a href="http://earthquake.usgs.gov/earthquakes/feed/">several formats</a>, with varying refresh frequencies. GeoJSON is the easiest to work with, but any of the other formats could be made to work.</p>
+
+            <p>Like many government agencies, the USGS has a lot of interesting open datasets. Interested in <a href="http://energy.usgs.gov/OtherEnergy/WindEnergy.aspx#4312358-data">Wind turbines</a>? <a href="https://lta.cr.usgs.gov/high_res_ortho">High-resolution, public domain satellite data</a>? There is a lot here. This isn't the best organized resource, but it is worth exploring if you are interested in climate and geological data sets.
+
             <h2>Enhancements</h2>
+            <ul>
+                <li>The underlying data feed used here updates every five minutes. Can you make the map do the same? If so, can you highlight the earthquakes that are only in the new set?</li>
+                <li>We chose just one of the several feeds for this map. Could you use the layer control functionality to let the user choose which one to see?</li>
+                <li>Could you use the <a href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson_detail.php">GeoJSON Detail feed</a> to display more information about the selected event on your map page?</li>
+            </ul>
+
             <h2>Resources</h2>
+            <ul>
+                <li><a href="http://earthquake.usgs.gov/earthquakes/feed/">The USGS feeds</a></li>
+                <li><a href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">The event summary format</a></li>
+            </ul>
         </section>
 
         <script src="../lib/leaflet-0.7/leaflet.js"></script>

@@ -41,14 +41,32 @@
             <h1>College Data from CollegeScorecard.ed.gov</h1>
             <div id="mapid" style="float: left; margin-right: 1em; width: 50%; height: 400px"></div>
             <textarea id="output" style="width: 45%; height: 400px"></textarea>
+
             <h2>Description</h2>
+            <p>This map is an excuse to bring the College Scorecard data set to your attention. Additionally, it does a few things:</p>
+            <ul>
+                <li>Uses buttons and events in the popup boxes.</li>
+                <li>Uses the <a href="https://github.com/calvinmetcalf/leaflet-ajax">Leaflet-Ajax</a> plugin to interact with a third party API.</li>
+                <li>Provides an example of pruning down a large dataset (~150 MB) in a way that it is usable in a web map.</li>
+                <li>Interacts with a non-map component, in the form of the <code>textarea</code> that receives the data.</li>
+            </ul>
+
             <h2>Data Source</h2>
+            <p>The College Scorecard data set powers the Department of Education's college search engine, <a href="https://collegescorecard.ed.gov/">CollegeScorecard</a>. This is a fascinating and dense chunk of data. Here's <a href="https://collegescorecard.ed.gov/school/?206604-Wright-State-University-Main-Campus">Wright State</a> and <a href="https://collegescorecard.ed.gov/school/?202480-University-of-Dayton">the University of Dayton</a>. The API that powers the site is robust; I encourage everyone to <a href="https://api.data.gov/signup/">signup for a free API key</a> and explore it yourself.</p>
+
             <h2>Enhancements</h2>
+            <ul>
+                <li>The <code>textarea</code> that receives the data right now works for the raw data, but could you make it more presentable? How would you go about doing that?</li>
+                <li>Sometimes, it is easier to type in a few characters of the name instead of clicking through the map. Could you implement a simple filter via a text field?</li>
+                <li>Could you replace those boring blue balloon markers with some pins that encode more data about the school? Perhaps differentiate by locality type (rural, suburban, urban) or profit/non-profit status? How about color coding a grade based on graduation rate or earning potential after graduation? You will need to modify the college_index.json data file to implement any of these suggestions.</li>
+            </ul>
+
             <h2>Resources</h2>
             <ul>
                 <li><a href="https://collegescorecard.ed.gov/data/documentation/">College Scorecard Data Documentation</a></li>
                 <li><a href="https://api.data.gov/signup/">Get your API Key!</a></li>
             </ul>
+
         </section>
         <script src="../lib/leaflet-0.7/leaflet.js"></script>
         <script src="../lib/leaflet.markercluster/leaflet.markercluster-src.js"></script>
