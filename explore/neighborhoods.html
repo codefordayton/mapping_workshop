@@ -8,6 +8,21 @@
         <link rel="stylesheet" href="../styles/workshop.css" />
     </head>
     <body>
+        <style>
+            .info {
+                padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                background: rgba(255,255,255,0.8);
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+            .info h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+        </style>
+
         <!-- Navigation Start -->
         <nav class="navigation">
             <ul>
@@ -38,9 +53,23 @@
             <h1>Neighborhood Data from Zillow.com</h1>
             <div id="mapid" style="width: 100%; height: 400px"></div>
             <h2>Description</h2>
+                <p>There are a variety of competing formats for representing GIS data. One of the most common ones when dealing with municipal organizations is the <a href="https://en.wikipedia.org/wiki/Shapefile">Shapefile</a>. This format can be used indirectly by leaflet, but it probably isn't a format you'll want to base your projects around. For this example, we are using the <a href="https://github.com/calvinmetcalf/leaflet.shapefile">leaflet.shapefile</a> plugin. This plugin actually converts the shapefile into GeoJSON before displaying it on the map. Non-optimal, but not terrible for demonstration purposes. This example demonstrates a few things:</p>
+                <ul>
+                    <li>Using a shapefile directly from a zipfile.</li>
+                    <li>Showcases <a href="http://www.zillow.com/">Zillow</a>, which provides <a href="http://www.zillow.com/howto/api/neighborhood-boundaries.htm">neighborhood boundaries</a> licensed under a <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons license</a>.</li>
+                    <li>Uses a custom information control instead of popups.</li>
+                    <li>Uses custom mouseover effects.</li>
+                    <li>Uses CSS to style the neighborhoods.</li>
+                </ul>
             <h2>Data Source</h2>
+            <p>As stated above, <a href="http://www.zillow.com/">Zillow</a> is the source of this data.</p>
             <h2>Enhancements</h2>
+            <p>Right now, this is a map without a mission, but it could be useful when combined with other data sets. It could be combined with additional map data (<a href="lotlinker.html">LotLinker</a>, or <a href="esri.html">MVRPC ESRI data</a>), or perhaps the info panels could be expanded with more information about the neighborhoods?</p>
             <h2>Resources</h2>
+            <ul>
+                <li><a href="http://leafletjs.com/examples/choropleth.html">Choropleth example</a> used in creating this example.</li>
+                <li><a href="http://leafletjs.com/reference.html#control">Leaflet Controls</a></li>
+            </ul>
         </section>
 
         <script src="../lib/leaflet-0.7/leaflet.js"></script>
@@ -58,22 +87,64 @@
                 id: 'mapbox.streets'
             }).addTo(mymap);
 
-            function formatPopup(props) {
-                return '<h3>' + props.NAME + '</h3>' +
-                       '<p>City: ' + props.CITY + '</p>' + 
-                       '<p>County: ' + props.COUNTY + '</p>'; 
+            function style(feature) {
+                return {
+                    fillColor: '#aabbcc',
+                    weight: 1,
+                    opacity: .6,
+                    color: 'black',
+                    dashArray: '3',
+                    fillOpacity: 0.3
+                };
             }
 
+            function highlightFeature(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 3,
+                    color: '#666',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                layer.bringToFront();
+                info.update(layer.feature.properties);
+            }
+
+            function resetHighlight(e) {
+                shpFileLayer.resetStyle(e.target);
+                info.update();
+            }
+
+            var info = L.control();
+
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+                this.update();
+                return this._div;
+            };
+
+            // method that we will use to update the control based on feature properties passed
+            info.update = function (props) {
+                this._div.innerHTML = '<h4>Neighborhood Explorer</h4>' +  (props ?
+                    '<b>' + props.NAME + '</b><br />' + props.CITY + '<br />' + props.COUNTY
+                    : 'Hover over a neighborhood');
+            };
+
+            info.addTo(mymap);
+
             function onEachFeature(feature, layer) {
-                if (feature.properties && feature.properties) {
-                    layer.bindPopup(formatPopup(feature.properties));
-                }
+                layer.on({
+                    mouseover: highlightFeature,
+                    mouseout: resetHighlight
+                });
             }
 
             var shpFileLayer = new L.Shapefile('data/ZillowNeighborhoods-OH.zip', {
-                onEachFeature: onEachFeature
-            });
-            shpFileLayer.addTo(mymap);
+                onEachFeature: onEachFeature,
+                style: style
+            }).addTo(mymap);
 
         </script>
     </body>

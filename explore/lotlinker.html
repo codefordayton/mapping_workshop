@@ -40,9 +40,28 @@
             <h1>Property Data from Lotlinker</h1>
             <div id="mapid" style="width: 100%; height: 400px"></div>
             <h2>Description</h2>
+            <p>This is a custom-built dataset created by Code For Dayton. It powers <a href="http://www.lotlinker.com/">LotLinker</a> and <a href="http://gogetproperties.com/">Go Get Properties</a>. Here is the <a href="https://github.com/codefordayton/scrapers">scraper</a> that collects the data, and here is the <a href="https://github.com/codefordayton/daytonreap/blob/master/scripts/buildjson.py">script</a> that builds the JSON file that is parsed for the site.</p>
+            <p>The complete Go Get Properties and LotLinker sites are more complicated that the map on this page. The actual sites provide searching and filtering, custom markers, and interactions between map components and other parts of the page. The code is a bit rough, but it still provides a good example for how these things can be done.</p>
             <h2>Data Source</h2>
+            <p>It is a multi-step process to create the data set for this application:</p>
+            <ul>
+                <li>Start with Montgomery County's monthly <a href="http://www.mctreas.org/filedownloads.cfm">delinquent property list</a>.</li>
+                <li>The reap scraper filters out records from the csv, and supplements the data with information scraped from the <a href="http://www.mctreas.org/">County Treasurer's site</a>.</li>
+                <li>It is then split between city of Dayton records (LotLinker) and county records (Go Get Properties) with the split_reap_items.py script.</li>
+                <li>Each record is geocoded via our custom geocoder<a href="#geocoder">*</a>, filtered for 'REAPability', and converted to JSON by the appropriate project's build_json.py script.</li>
+                <li>The output is copied into the static/data folder for each web server.</li>
+            </ul>
+            <p id="geocoder">Geocoding is an important topic in web mapping, especially if you have data that does not contain lat/lon coordinates. We chose to build our own, since some of the data was missing complete addresses. Using the county's <a href="http://www.mcauditor.org/downloads/gis_download_shape.cfm">GIS data</a>, we could key off the parcel ids instead of street address. The work of building the geocoder is split between the scraper's init_parcel_centroid.py script, and the individual build_json.py scripts. Building something like this is outside the scope of the workshop, but we'd be happy to talk you through the process we used.</p>
+
+            <p>There are several free or free-ish geocoders available that work on normal address data. The <a href="http://geocoding.geo.census.gov/">U.S. Census Bureau</a> provides one, as does <a href="https://developers.google.com/maps/documentation/geocoding/start">Google</a>. Each has its benefits and drawbacks.</p>
+
             <h2>Enhancements</h2>
+            <p>As mentioned earlier, the code written for LotLinker and Go Get Properties is a bit rough, and it could use some improvements. If you are interested in helping out, please let us know!
+
             <h2>Resources</h2>
+            <ul>
+                <li><a href="http://scrapy.org/">Scrapy</a>, our web scraper of choice.</li>
+            </ul>
         </section>
 
         <script src="../lib/leaflet-0.7/leaflet.js"></script>

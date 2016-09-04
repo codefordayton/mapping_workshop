@@ -39,9 +39,33 @@
             <h1>ESRI Data from MVRPC</h1>
             <div id="mapid" style="width: 100%; height: 400px"></div>
             <h2>Description</h2>
+            <p>If you spend any time working with maps, you will encounter <a href="http://www.esri.com/">ESRI</a>. They are the de defacto standard for mapping within large organizations and municipalities. If there is a GIS department, there is likely an ArcGIS instance around somewhere. Learning to work with ArcGIS data is crucial if you intend to work with data provided by municipalities.</p>
+
+            <p>This example introduces the <a href="http://esri.github.io/esri-leaflet/">Esri Leaflet</a> plugin. Additionally, it introduces:</p>
+            <ul>
+                <li>the <a href="http://leafletjs.com/reference.html#control-layers">Layers Control</a></li>
+                <li>the difference between base maps and overlays.</li>
+                <li>some alternate basemaps, including the delightful <a href="http://maps.stamen.com/watercolor/#12/37.7706/-122.3782">Stamen Watercolor</a> set and a good looking satellite layer from ESRI.</li>
+                <li>using ESRI dynamic map layer images.</li>
+            </ul>
+
             <h2>Data Source</h2>
+            <p>The data we've used on this map comes from the Miami Valley Regional Planning Commission (MVRPC). They have an <a href="http://mvrpc.maps.arcgis.com/home/group.html?owner=tharner%40mvrpc.org&title=MVRPC%20Regional%20Resources&focus=all&q=">ArcGIS portal</a> of resources that you can consume. Many of these products can be used in Leaflet via the ESRI plugin.</p>
+
+            <p>Here, we are using two particular map image layers, <a href="http://mvrpc.maps.arcgis.com/home/item.html?id=bf9f87fe5dae4bafbc5cb774cbc0f362">Projected Population Change 2000-2040</a> and <a href="http://mvrpc.maps.arcgis.com/home/item.html?id=b0949c84fb904389b78942dbfed3276d">Projected Employment Change 2000-2040</a>.</p>
+
             <h2>Enhancements</h2>
+            <ul>
+                <li>Maps like this are useful when they can tell a story. Could you link the layer visibility to an information block with a legend and description?</li>
+            </ul>
             <h2>Resources</h2>
+            <ul>
+                <li>ESRI's <a href="https://www.arcgis.com/home/index.html">ArcGIS Online</a></li>
+                <li><a href="http://esri.github.io/esri-leaflet/">ESRI-leaflet plugin</a></li>
+                <li><a href="http://leafletjs.com/reference.html#control-layers">Control.Layers</a></li>
+                <li><a href="http://maps.cityofdayton.org/ArcGIS/rest/services">City Of Dayton ArcGIS services</a></li>
+                <li><a href="http://www.mcohio.org/government/elected_officials/engineer/gis.php">Montgomery County ArcGIS services</a></li>
+            </ul>
         </section>
 
         <script src="../lib/leaflet-0.7/leaflet.js"></script>
