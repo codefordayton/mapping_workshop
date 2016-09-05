@@ -41,7 +41,11 @@ $(document).ready(function() {
         tilematrixset: 'GoogleMapsCompatible_Level'
     });
 
+    // Single layer
+    osm.addTo(mymap);
+
+    // Multiple Layers
     //viirs.addTo(mymap);
     //cartodbLabels.addTo(mymap);
-    osm.addTo(mymap);
+
 });
