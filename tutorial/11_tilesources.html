@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web Mapping Workshop</title>
+
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+
+        <!-- Prism (syntax highlighting) -->
+        <link rel="stylesheet" href="../lib/prism/prism.css" />
+        <script src="../lib/prism/prism.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="00_introductions.html">Introductions</a></li>
+                <li><a href="01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="03_devenv.html">Development Environment</a></li>
+                <li><a href="10_hellomap.html">Making a Map</a></li>
+                <li><a href="11_tilesources.html">Base Maps</a></li>
+                <li><a href="20_markers.html">Markers</a></li>
+                <li><a href="21_popups.html">Pop Ups</a><li>
+                <li><a href="30_linestrings.html">Line Data</a></li>
+                <li><a href="31_polygons.html">Polygons</a></li>
+                <li><a href="40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="41_heatmap.html">Plugins - Heatmap</a></li>
+                <!-- <li>Civic Hacking &amp; Code for Dayton</li>
+                <li>Data - Dayton</li>
+                <li>Data - National</li>
+                <li>Data - Global</li>
+                <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li> -->
+            </ul>
+        </nav>
+        <!-- Navigation End -->
+
+        <section class="content">
+            <h1>Tile Sources</h1>
+
+            <p>
+                You have several options for your base map. There are many free
+                (and several paid) providers for map tiles. Also, this is a good
+                time to talk about Mapbox. They are a commerical mapping company
+                with several tools for making maps. You can design your own
+                map tiles using <a href="https://www.mapbox.com/mapbox-studio/">Mapbox Studio</a>
+                and use them with leaflet. Doing so will require you to create an
+                account with them and getting an API key.
+            </p>
+
+            <h2>map.js</h2>
+            <p>
+                Here are a few options from <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">http://leaflet-extras.github.io/leaflet-providers/preview/</a>,
+                a GitHub repository listing several different free options for
+                map tile providers.
+            </p>
+            <pre class="line-numbers language-javascript" data-src="11_tilesources/map.js"></pre>
+
+
+            <h2>Result</h2>
+            <p>
+                Let's take a look at the
+                <a href="11_tilesources/index.html" target="_blank">result here</a>.
+            </p>
+
+
+            <h2>Further Reading</h2>
+            <ul>
+                <li><a href="http://leaflet-extras.github.io/leaflet-providers/preview">Leaflet Map Providers</a></li>
+                <li><a href="https://www.mapbox.com">Mapbox</a></li>
+            </ul>
+
+            <div class="tutbuttons">
+                <a class="tutbutton" href="10_hellomap.html">Previous</a>
+                <a class="tutbutton" href="20_markers.html">Next</a>
+            </div>
+
+        </section>
+
+    </body>
+</html>
