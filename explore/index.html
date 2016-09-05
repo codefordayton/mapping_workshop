@@ -2,9 +2,8 @@
 <html>
 
     <head>
-        <title>Web Mapping Workshop - ESRI Data</title>
+        <title>Web Mapping Workshop - Further Explorations</title>
 
-        <link rel="stylesheet" href="../lib/leaflet-0.7/leaflet.css" />
         <link rel="stylesheet" href="../styles/reset.css" />
         <link rel="stylesheet" href="../styles/workshop.css" />
     </head>
@@ -44,73 +43,56 @@
         <!-- Navigation End -->
 
         <section class="content">
-            <h1>Web Mapping Workshop</h1>
-            <h2>Further Explorations</h2>
-            <h3>Local Examples of Interesting Datasets</h3>
-            <ul>
-                <li>
-                    <a href="lotlinker.html">
-                        REAPable properties in Dayton
-                    </a>
-                </li>
-                <li>
-                    <a href="earthquake.html">
-                        View a geojson dataset of earthquakes.
-                    </a>
-                </li>
-                <li>
-                    <a href="airports.html">
-                        airport codes and routes, tsv for processing
-                    </a>
-                </li>
-                <li>
-                    <a href="neighborhoods.html">
-                        neighborhood shape files
-                    </a>
-                </li>
-                <li>
-                    <a href="college.html">
-                        college scorecard data
-                    </a>
-                </li>
-            </ul>
+            <h1>Further Explorations</h1>
 
-            <h3>Other Interesting Datasets</h3>
-            <ul>
-                <li>
-                    <a href="http://mvrpc.maps.arcgis.com/home/group.html?owner=tharner%40mvrpc.org&title=MVRPC%20Regional%20Resources&focus=all&q=">
-                        MVRPC ArcGIS Site
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.poi-factory.com">
-                        points of interest datasets, need to register, CSV for processing
-                    </a>
-                </li>
-            </ul>
+            <p>These are some examples that make use of the lessons you've already learned, add some new bits &amp; pieces, and highlight some interesting data sources that are available for your use. If you are stumped for something to build, each example includes some potential enhancements to the project that you could attempt.</p>
 
-            <h3>Tools and Scripts</h3>
-            <ul>
-                <li>Geocoders</li>
-                <li>Conversion Scripts</li>
-                <li>
-                    <a href="https://github.com/MatthewBarker/leaflet-wikipedia">
-                        Leaflet-wikipedia
-                    </a>, <a href="https://github.com/kr1/Leaflet.dbpediaLayer/">
-                        dbpedia
-                    </a> - display wikipedia articles on the map
-                </li>
-                <li>
-                    <a href="https://github.com/aparshin/leaflet-GIBS">
-                        cool, updated layers for lights, temperature, and other science displays
-                    </a>
-                </li>
-                <li>
-                    <a href="http://esri.github.io/esri-leaflet/">
-                        using ESRI resources
-                    </a>
-                </li>
-            </ul>
+            <p>The examples are separated by the size of their area of interest. There are many great national and international data sets, but sometimes you want to work on local problems.</p>
+
+            <h2>Local Datasets</h2>
+            <br />
+
+            <h3><a href="lotlinker.html">REAPable Properties in Dayton</a></h3>
+            <p>This is a dataset containing all properties that are 'REAPable', which means they qualify for the Real Estate Acquisition Program. Code For Dayton compiled this dataset based on data pulled from the Montgomery County Treasurers Office.</p>
+            <p><b>Features Used:</b>Markercluster plugin, custom scraper</p>
+            <hr>
+
+            <h3><a href="neighborhoods.html">Local Neighborhoods from Zillow</a></h3>
+            <p>Zillow provides neighborhood boundaries as a shapefile. This consumes that file and offers an alternative to the popup bubble for displaying information.</p>
+            <p><b>Features Used:</b> shapefiles, information controls, mouseover events</p>
+            <hr>
+
+            <h3><a href="esri.html">ESRI Data from MVRPC</a></h3>
+            <p>This example demonstrates how to use some ESRI hosted resources provided by the Miami Valley Regional Planning Commission.</p>
+            <p><b>Features Used:</b> ESRI-leaflet plugin, Layer Control, a selection of basemaps</p>
+            <hr>
+
+            <h2>National Datasets</h2>
+            <br />
+
+            <h3><a href="colleges.html">College Scorecard API</a></h3>
+            <p>This example interacts with the Department of Education's College Scorecard dataset.</p>
+            <p><b>Features Used:</b> Interactive elements in popups, third-party API usage, interacting with other page elements, marker cluster, custom parser</p>
+            <hr>
+
+            <h2>International Datasets</h2>
+            <br />
+
+            <h3><a href="earthquakes.html">Real-time Earthquake Data from USGS</a></h3>
+            <p>This example consumes the realtime GeoJSON feed of earthquakes across the Earth.</p>
+            <p><b>Features Used:</b> GeoJSON feeds, custom map points styled with CSS</p>
+            <hr>
+
+            <h2>Other Datasets (No examples)</h2>
+            <br />
+
+            <h3><a href="http://www.poi-factory.com">POI Factory</a></h3>
+            <p>A large selection of Point of Interest (POI) datasets for use with GPS devices. Could be used by leaflet.</p>
+            <hr>
+
+            <h3><a href="https://github.com/aparshin/leaflet-GIBS">NASA GIBS Imagery</a></h3>
+            <p>NASA's Global Imagery Browse Service (GIBS) provides some gorgeous imagery of large swaths of the globe.</p>
+            <hr>
         </section>
     </body>
 </html>

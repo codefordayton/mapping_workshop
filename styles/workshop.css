@@ -123,3 +123,12 @@ strong {
     list-style-type: circle;
     list-style-position: inside;
 }
+
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+}
