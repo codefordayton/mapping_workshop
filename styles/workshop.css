@@ -80,6 +80,10 @@ strong {
     color: #ffffff;
 }
 
+.navigation li > ul {
+    list-style-type: circle;
+    list-style-position: inside;
+}
 
 /** Content **/
 .content {
@@ -113,4 +117,9 @@ strong {
 .tutbutton:hover {
     background: #6ccf70;
     color: #fff;
+}
+
+.content ul {
+    list-style-type: circle;
+    list-style-position: inside;
 }
