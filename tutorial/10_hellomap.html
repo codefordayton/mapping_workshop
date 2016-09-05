@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web Mapping Workshop</title>
+
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+
+        <!-- Prism (syntax highlighting) -->
+        <link rel="stylesheet" href="../lib/prism/prism.css" />
+        <script src="../lib/prism/prism.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="00_introductions.html">Introductions</a></li>
+                <li><a href="01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="03_devenv.html">Development Environment</a></li>
+                <li><a href="10_hellomap.html">Making a Map</a></li>
+                <li><a href="11_tilesources.html">Base Maps</a></li>
+                <li><a href="20_markers.html">Markers</a></li>
+                <li><a href="21_popups.html">Pop Ups</a><li>
+                <li><a href="30_linestrings.html">Line Data</a></li>
+                <li><a href="31_polygons.html">Polygons</a></li>
+                <li><a href="40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="41_heatmap.html">Plugins - Heatmap</a></li>
+                <!-- <li>Civic Hacking &amp; Code for Dayton</li>
+                <li>Data - Dayton</li>
+                <li>Data - National</li>
+                <li>Data - Global</li>
+                <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li> -->
+            </ul>
+        </nav>
+        <!-- Navigation End -->
+
+        <section class="content">
+            <h1>Hello World</h1>
+
+            <p>
+                Before we get started with leaflet, it's important to understand
+                the starter files and how things are wired together. Let's take
+                a moment to go through the files.
+            </p>
+
+            <h2>index.html</h2>
+            <p>
+                This file contains the markup that the browser will display. In
+                the head section, we include the Leaflet and jQuery libraries, as
+                well as our own code contained in map.js. The body section is
+                light containing only a single div element with the id of map.
+                For this course, we'll be doing full screen maps, but leaflet
+                doesn't care about the size of the element it is rendered to. You
+                can use these techniques to integrate maps into any web page you want.
+            </p>
+            <pre class="line-numbers language-html" data-src="10_hellomap/index.html"></pre>
+
+            <h2>map.js</h2>
+            <p>
+                This file contains the JavaScript we'll be writing to display
+                our maps. For now, we'll just initialize the map with some
+                Open Street Map tiles and center the view on Dayton.
+            </p>
+            <pre class="line-numbers language-javascript" data-src="10_hellomap/map.js"></pre>
+
+
+            <h2>Result</h2>
+            <p>
+                That's all it takes to get a map rendered to your webpage. Leaflet
+                has great support for both desktop and mobile devices.
+                Let's take a look at the
+                <a href="10_hellomap/index.html" target="_blank">result here</a>.
+            </p>
+
+
+            <h2>Further Reading</h2>
+            <ul>
+                <li><a href="http://leafletjs.com/examples.html">Leaflet Examples</a></li>
+                <li><a href="http://leafletjs.com/reference.html">Leaflet API Documentation</a></li>
+            </ul>
+
+            <div class="tutbuttons">
+                <a class="tutbutton" href="03_devenv.html">Previous</a>
+                <a class="tutbutton" href="11_tilesources.html">Next</a>
+            </div>
+
+        </section>
+
+    </body>
+</html>
