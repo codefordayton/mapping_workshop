@@ -4,3 +4,4 @@ bower_components
 *.swp
 .tmp
 .DS_Store
+explore/data/college_data.csv

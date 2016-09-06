@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web Mapping Workshop - College Scorecard Data</title>
+
+        <link rel="stylesheet" href="../lib/leaflet-0.7/leaflet.css" />
+        <link rel="stylesheet" href="../lib/leaflet.markercluster/MarkerCluster.css" />
+        <link rel="stylesheet" href="../lib/leaflet.markercluster/MarkerCluster.Default.css" />
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+    </head>
+    <body>
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="../tutorial/00_introductions.html">Introductions</a></li>
+                <li><a href="../tutorial/01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="../tutorial/02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="../tutorial/03_devenv.html">Development Environment</a></li>
+                <li><a href="../tutorial/10_hellomap.html">Making a Map</a></li>
+                <li><a href="../tutorial/11_tilesources.html">Base Maps</a></li>
+                <li><a href="../tutorial/20_markers.html">Markers</a></li>
+                <li><a href="../tutorial/21_popups.html">Pop Ups</a><li>
+                <li><a href="../tutorial/30_linestrings.html">Line Data</a></li>
+                <li><a href="../tutorial/31_polygons.html">Polygons</a></li>
+                <li><a href="../tutorial/40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="../tutorial/41_heatmap.html">Plugins - Heatmap</a></li>
+                <li><a href="../explore/cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
+                <li>
+                    <a href="../explore/index.html">Further Explorations</a>
+                    <ul>
+                        <li><a href="../explore/lotlinker.html">LotLinker</a></li>
+                        <li><a href="../explore/neighborhoods.html">Neighborhoods</a></li>
+                        <li><a href="../explore/esri.html">ESRI Data</a></li>
+                        <li><a href="../explore/airports.html">Airports</a></li>
+                        <li><a href="../explore/college.html">Colleges</a></li>
+                        <li><a href="../explore/earthquake.html">Earthquakes</a></li>
+                    </ul>
+                </li>
+                <!-- <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li>-->
+            </ul>
+        </nav>
+        <!-- Navigation End -->
+
+        <section class="content">
+            <h1>College Data from CollegeScorecard.ed.gov</h1>
+            <div id="mapid" style="float: left; margin-right: 1em; width: 50%; height: 400px"></div>
+            <textarea id="output" style="width: 45%; height: 400px"></textarea>
+
+            <h2>Description</h2>
+            <p>This map is an excuse to bring the College Scorecard data set to your attention. Additionally, it does a few things:</p>
+            <ul>
+                <li>Uses buttons and events in the popup boxes.</li>
+                <li>Uses the <a href="https://github.com/calvinmetcalf/leaflet-ajax">Leaflet-Ajax</a> plugin to interact with a third party API.</li>
+                <li>Provides an example of pruning down a large dataset (~150 MB) in a way that it is usable in a web map.</li>
+                <li>Interacts with a non-map component, in the form of the <code>textarea</code> that receives the data.</li>
+            </ul>
+
+            <h2>Data Source</h2>
+            <p>The College Scorecard data set powers the Department of Education's college search engine, <a href="https://collegescorecard.ed.gov/">CollegeScorecard</a>. This is a fascinating and dense chunk of data. Here's <a href="https://collegescorecard.ed.gov/school/?206604-Wright-State-University-Main-Campus">Wright State</a> and <a href="https://collegescorecard.ed.gov/school/?202480-University-of-Dayton">the University of Dayton</a>. The API that powers the site is robust; I encourage everyone to <a href="https://api.data.gov/signup/">signup for a free API key</a> and explore it yourself.</p>
+
+            <h2>Enhancements</h2>
+            <ul>
+                <li>The <code>textarea</code> that receives the data right now works for the raw data, but could you make it more presentable? How would you go about doing that?</li>
+                <li>Sometimes, it is easier to type in a few characters of the name instead of clicking through the map. Could you implement a simple filter via a text field?</li>
+                <li>Could you replace those boring blue balloon markers with some pins that encode more data about the school? Perhaps differentiate by locality type (rural, suburban, urban) or profit/non-profit status? How about color coding a grade based on graduation rate or earning potential after graduation? You will need to modify the college_index.json data file to implement any of these suggestions.</li>
+            </ul>
+
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://collegescorecard.ed.gov/data/documentation/">College Scorecard Data Documentation</a></li>
+                <li><a href="https://api.data.gov/signup/">Get your API Key!</a></li>
+            </ul>
+
+        </section>
+        <script src="../lib/leaflet-0.7/leaflet.js"></script>
+        <script src="../lib/leaflet.markercluster/leaflet.markercluster-src.js"></script>
+        <script src="../lib/leaflet.ajax.js"></script>
+        <script>
+
+            var mymap = L.map('mapid').setView([39.758948, -104.191607], 2);
+
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+                maxZoom: 18,
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                id: 'mapbox.streets'
+            }).addTo(mymap);
+
+            var API_URL = 'https://api.data.gov/ed/collegescorecard/v1/schools';
+            var API_KEY = 'SkCKQdjRbT4BakatLO7uAg9r8B3gTLiaZn4grKCK';
+
+            function lookupSchool(id) {
+                document.getElementById('output').value = '';
+                L.Util.ajax(API_URL + '?id=' + id + '&api_key=' + API_KEY).then(function(data) {
+                    document.getElementById('output').value = JSON.stringify(data, null, 2);
+                });
+            }
+
+            function formatPopup(props) {
+                return '<a href="http://' + props.url + '">' + props.name + '</a>' +
+                    '<br />' +
+                    '<button type="button" onclick="javascript:lookupSchool(' +
+                        props.id + ')">Lookup!</button>';
+            }
+
+            var markerList = [];
+            L.Util.ajax('data/college_index.json').then(function(colleges) {
+                for (var i = 0; i < colleges.length; i++) {
+                    var a = colleges[i];
+                    var title = a.name;
+                    var marker = L.marker(L.latLng(parseFloat(a.lat), parseFloat(a.lon)), { title: title});
+
+                    marker.bindPopup(formatPopup(a));
+                    markerList.push(marker);
+                }
+                markers = L.markerClusterGroup();
+                markers.addLayers(markerList);
+                mymap.addLayer(markers);
+            });
+        </script>
+    </body>
+</html>
+

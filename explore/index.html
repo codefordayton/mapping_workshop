@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web Mapping Workshop - Further Explorations</title>
+
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+    </head>
+    <body>
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="../tutorial/00_introductions.html">Introductions</a></li>
+                <li><a href="../tutorial/01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="../tutorial/02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="../tutorial/03_devenv.html">Development Environment</a></li>
+                <li><a href="../tutorial/10_hellomap.html">Making a Map</a></li>
+                <li><a href="../tutorial/11_tilesources.html">Base Maps</a></li>
+                <li><a href="../tutorial/20_markers.html">Markers</a></li>
+                <li><a href="../tutorial/21_popups.html">Pop Ups</a><li>
+                <li><a href="../tutorial/30_linestrings.html">Line Data</a></li>
+                <li><a href="../tutorial/31_polygons.html">Polygons</a></li>
+                <li><a href="../tutorial/40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="../tutorial/41_heatmap.html">Plugins - Heatmap</a></li>
+                <li><a href="../explore/cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
+                <li>
+                    <a href="../explore/index.html">Further Explorations</a>
+                    <ul>
+                        <li><a href="../explore/lotlinker.html">LotLinker</a></li>
+                        <li><a href="../explore/neighborhoods.html">Neighborhoods</a></li>
+                        <li><a href="../explore/esri.html">ESRI Data</a></li>
+                        <li><a href="../explore/airports.html">Airports</a></li>
+                        <li><a href="../explore/college.html">Colleges</a></li>
+                        <li><a href="../explore/earthquake.html">Earthquakes</a></li>
+                    </ul>
+                </li>
+                <!-- <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li>-->
+            </ul>
+        </nav>
+        <!-- Navigation End -->
+
+        <section class="content">
+            <h1>Further Explorations</h1>
+
+            <p>These are some examples that make use of the lessons you've already learned, add some new bits &amp; pieces, and highlight some interesting data sources that are available for your use. If you are stumped for something to build, each example includes some potential enhancements to the project that you could attempt.</p>
+
+            <p>The examples are separated by the size of their area of interest. There are many great national and international data sets, but sometimes you want to work on local problems.</p>
+
+            <h2>Local Datasets</h2>
+            <br />
+
+            <h3><a href="lotlinker.html">REAPable Properties in Dayton</a></h3>
+            <p>This is a dataset containing all properties that are 'REAPable', which means they qualify for the Real Estate Acquisition Program. Code For Dayton compiled this dataset based on data pulled from the Montgomery County Treasurers Office.</p>
+            <p><b>Features Used:</b>Markercluster plugin, custom scraper</p>
+            <hr>
+
+            <h3><a href="neighborhoods.html">Local Neighborhoods from Zillow</a></h3>
+            <p>Zillow provides neighborhood boundaries as a shapefile. This consumes that file and offers an alternative to the popup bubble for displaying information.</p>
+            <p><b>Features Used:</b> shapefiles, information controls, mouseover events</p>
+            <hr>
+
+            <h3><a href="esri.html">ESRI Data from MVRPC</a></h3>
+            <p>This example demonstrates how to use some ESRI hosted resources provided by the Miami Valley Regional Planning Commission.</p>
+            <p><b>Features Used:</b> ESRI-leaflet plugin, Layer Control, a selection of basemaps</p>
+            <hr>
+
+            <h2>National Datasets</h2>
+            <br />
+
+            <h3><a href="colleges.html">College Scorecard API</a></h3>
+            <p>This example interacts with the Department of Education's College Scorecard dataset.</p>
+            <p><b>Features Used:</b> Interactive elements in popups, third-party API usage, interacting with other page elements, marker cluster, custom parser</p>
+            <hr>
+
+            <h2>International Datasets</h2>
+            <br />
+
+            <h3><a href="earthquakes.html">Real-time Earthquake Data from USGS</a></h3>
+            <p>This example consumes the realtime GeoJSON feed of earthquakes across the Earth.</p>
+            <p><b>Features Used:</b> GeoJSON feeds, custom map points styled with CSS</p>
+            <hr>
+
+            <h2>Other Datasets (No examples)</h2>
+            <br />
+
+            <h3><a href="http://www.poi-factory.com">POI Factory</a></h3>
+            <p>A large selection of Point of Interest (POI) datasets for use with GPS devices. Could be used by leaflet.</p>
+            <hr>
+
+            <h3><a href="https://github.com/aparshin/leaflet-GIBS">NASA GIBS Imagery</a></h3>
+            <p>NASA's Global Imagery Browse Service (GIBS) provides some gorgeous imagery of large swaths of the globe.</p>
+            <hr>
+        </section>
+    </body>
+</html>

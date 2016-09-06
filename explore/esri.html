@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web Mapping Workshop - ESRI Data</title>
+
+        <link rel="stylesheet" href="../lib/leaflet-0.7/leaflet.css" />
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+    </head>
+    <body>
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="../tutorial/00_introductions.html">Introductions</a></li>
+                <li><a href="../tutorial/01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="../tutorial/02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="../tutorial/03_devenv.html">Development Environment</a></li>
+                <li><a href="../tutorial/10_hellomap.html">Making a Map</a></li>
+                <li><a href="../tutorial/11_tilesources.html">Base Maps</a></li>
+                <li><a href="../tutorial/20_markers.html">Markers</a></li>
+                <li><a href="../tutorial/21_popups.html">Pop Ups</a><li>
+                <li><a href="../tutorial/30_linestrings.html">Line Data</a></li>
+                <li><a href="../tutorial/31_polygons.html">Polygons</a></li>
+                <li><a href="../tutorial/40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="../tutorial/41_heatmap.html">Plugins - Heatmap</a></li>
+                <li><a href="../explore/cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
+                <li>
+                    <a href="../explore/index.html">Further Explorations</a>
+                    <ul>
+                        <li><a href="../explore/lotlinker.html">LotLinker</a></li>
+                        <li><a href="../explore/neighborhoods.html">Neighborhoods</a></li>
+                        <li><a href="../explore/esri.html">ESRI Data</a></li>
+                        <li><a href="../explore/airports.html">Airports</a></li>
+                        <li><a href="../explore/college.html">Colleges</a></li>
+                        <li><a href="../explore/earthquake.html">Earthquakes</a></li>
+                    </ul>
+                </li>
+                <!-- <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li>-->
+            </ul>
+        </nav>
+        <!-- Navigation End -->
+
+        <section class="content">
+            <h1>ESRI Data from MVRPC</h1>
+            <div id="mapid" style="width: 100%; height: 400px"></div>
+            <h2>Description</h2>
+            <p>If you spend any time working with maps, you will encounter <a href="http://www.esri.com/">ESRI</a>. They are the de defacto standard for mapping within large organizations and municipalities. If there is a GIS department, there is likely an ArcGIS instance around somewhere. Learning to work with ArcGIS data is crucial if you intend to work with data provided by municipalities.</p>
+
+            <p>This example introduces the <a href="http://esri.github.io/esri-leaflet/">Esri Leaflet</a> plugin. Additionally, it introduces:</p>
+            <ul>
+                <li>the <a href="http://leafletjs.com/reference.html#control-layers">Layers Control</a></li>
+                <li>the difference between base maps and overlays.</li>
+                <li>some alternate basemaps, including the delightful <a href="http://maps.stamen.com/watercolor/#12/37.7706/-122.3782">Stamen Watercolor</a> set and a good looking satellite layer from ESRI.</li>
+                <li>using ESRI dynamic map layer images.</li>
+            </ul>
+
+            <h2>Data Source</h2>
+            <p>The data we've used on this map comes from the Miami Valley Regional Planning Commission (MVRPC). They have an <a href="http://mvrpc.maps.arcgis.com/home/group.html?owner=tharner%40mvrpc.org&title=MVRPC%20Regional%20Resources&focus=all&q=">ArcGIS portal</a> of resources that you can consume. Many of these products can be used in Leaflet via the ESRI plugin.</p>
+
+            <p>Here, we are using two particular map image layers, <a href="http://mvrpc.maps.arcgis.com/home/item.html?id=bf9f87fe5dae4bafbc5cb774cbc0f362">Projected Population Change 2000-2040</a> and <a href="http://mvrpc.maps.arcgis.com/home/item.html?id=b0949c84fb904389b78942dbfed3276d">Projected Employment Change 2000-2040</a>.</p>
+
+            <h2>Enhancements</h2>
+            <ul>
+                <li>Maps like this are useful when they can tell a story. Could you link the layer visibility to an information block with a legend and description?</li>
+            </ul>
+            <h2>Resources</h2>
+            <ul>
+                <li>ESRI's <a href="https://www.arcgis.com/home/index.html">ArcGIS Online</a></li>
+                <li><a href="http://esri.github.io/esri-leaflet/">ESRI-leaflet plugin</a></li>
+                <li><a href="http://leafletjs.com/reference.html#control-layers">Control.Layers</a></li>
+                <li><a href="http://maps.cityofdayton.org/ArcGIS/rest/services">City Of Dayton ArcGIS services</a></li>
+                <li><a href="http://www.mcohio.org/government/elected_officials/engineer/gis.php">Montgomery County ArcGIS services</a></li>
+            </ul>
+        </section>
+
+        <script src="../lib/leaflet-0.7/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js"></script>
+        <script>
+
+            var mymap = L.map('mapid').setView([39.758948, -84.191607], 9);
+
+            var streets = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+                maxZoom: 18,
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                id: 'mapbox.streets'
+            });
+            streets.addTo(mymap);
+
+            var imagery = L.esri.basemapLayer('Imagery');
+
+            var watercolor = L.tileLayer("http://a.tile.stamen.com/watercolor/{z}/{x}/{y}.jpeg", {
+                maxZoom: 18,
+                attribution: [
+                    'Map tiles by <a href="http://stamen.com/">Stamen Design</a>, ',
+                    'under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. ',
+                    'Data by <a href="http://openstreetmap.org/">OpenStreetMap</a>, ',
+                    'under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
+                ].join(""),
+                id: 'stamen.watercolor'
+            });
+
+            var emp = L.esri.dynamicMapLayer({
+                url: 'http://gis.mvrpc.org/arcgis/rest/services/GP/Change_in_Emp_1031/MapServer',
+                opacity: 0.7
+            });
+
+            var pop = L.esri.dynamicMapLayer({
+                url: 'http://gis.mvrpc.org/arcgis/rest/services/GP/Change_in_Pop_1031/MapServer',
+                opacity: 0.7
+            })
+            pop.addTo(mymap);
+
+            var baseMaps = {
+                "Watercolor": watercolor,
+                "Streets": streets,
+                "Satellite": imagery
+            };
+
+            var overlayMaps = {
+                "Projected Population Change, 2000-2040": pop,
+                "Projected Employment Change, 2000-2040": emp 
+            };
+            L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+
+        </script>
+    </body>
+</html>
+

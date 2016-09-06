@@ -15,8 +15,8 @@ The Entrepreneurs Center
 $5.00 - Lunch Provided
 
 ## Materials
-- Workshop Website
-- Starter Project (this repo)
+- [Workshop Website](http://codefordayton.github.io/mapping_workshop)
+- [Starter Project (this repo - master branch)](https://github.com/codefordayton/mapping_workshop)
 
 ## Agenda
     - Introduction to Web Mapping
@@ -25,6 +25,7 @@ $5.00 - Lunch Provided
     - Making a map
     - Points - putting markers on the map (marker + pop ups)
     - Feature Data - polygons, geojson
+    - Time Series with Playback
     - Plugins - marker clusterer, awesome markers, others?
     - Other resources
     - Civic Hacking & CfD
