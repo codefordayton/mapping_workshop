@@ -9,6 +9,11 @@ $(document).ready(function() {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(mymap);
 
+    // By creating a separate layer to render our markers to, we get some
+    // nifty payoffs at the end
+    var markerLayer = L.featureGroup();
+    markerLayer.addTo(mymap);
+
     // Ok, now we have to get the data. We'll use jQuery here to make things
     // easier on us.
     $.get('skyline.oh.tsv', function(data) {
@@ -31,18 +36,33 @@ $(document).ready(function() {
             if (!isNaN(values[0]) && !isNaN(values[1])) {
                 locations.push({
                     latitude: Number(values[0]),
-                    longitude: Number(values[1])
+                    longitude: Number(values[1]),
+                    name: values[3],
+                    address: values[5],
+                    phone: values[6]
                 });
             }
         }
+
+        // infoTemplate is a string template for use with L.Util.template()
+        var infoTemplate = '<h2>{name}</h2><p>{address}</p><p>{phone}</p>';
 
         // Ok, now we have an array of locations. We can now plot those on our map!
         len = locations.length;
         var location;
         for (i = 0; i < len; i++) {
             location = locations[i];
-            L.marker([location.latitude, location.longitude]).addTo(mymap);
+
+            // Here we're going to set the popup data equal to the result of
+            // applying the current location object to our infoTemplate
+            // string template.
+            L.marker([location.latitude, location.longitude])
+                .addTo(markerLayer)
+                .bindPopup(L.Util.template(infoTemplate, location));
         }
+
+        // Now we can zoom the map to the extent of the markers
+        mymap.fitBounds(markerLayer.getBounds());
 
     }); // $.get()
 }); // document.ready()
