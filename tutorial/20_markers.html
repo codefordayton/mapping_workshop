@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web Mapping Workshop</title>
+
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+
+        <!-- Prism (syntax highlighting) -->
+        <link rel="stylesheet" href="../lib/prism/prism.css" />
+        <script src="../lib/prism/prism.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="00_introductions.html">Introductions</a></li>
+                <li><a href="01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="03_devenv.html">Development Environment</a></li>
+                <li><a href="10_hellomap.html">Making a Map</a></li>
+                <li><a href="11_tilesources.html">Base Maps</a></li>
+                <li><a href="20_markers.html">Markers</a></li>
+                <li><a href="21_popups.html">Pop Ups</a><li>
+                <li><a href="30_linestrings.html">Line Data</a></li>
+                <li><a href="31_polygons.html">Polygons</a></li>
+                <li><a href="40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="41_heatmap.html">Plugins - Heatmap</a></li>
+                <!-- <li>Civic Hacking &amp; Code for Dayton</li>
+                <li>Data - Dayton</li>
+                <li>Data - National</li>
+                <li>Data - Global</li>
+                <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li> -->
+            </ul>
+        </nav>
+        <!-- Navigation End -->
+
+        <section class="content">
+            <h1>Markers</h1>
+            <p>
+                Ok, now that we have a base map, let's put some data on it!
+                For this example, we're going to plot the locations of all the
+                Skyline Chili restaurants in Ohio.
+            </p>
+
+
+            <h2>map.js</h2>
+            <p>
+                I'll step through this file with you, though you can see, most
+                of the work we need to do is in formating the data. Unfortunately,
+                this is 90% of any visualization project I've ever worked on.
+            </p>
+            <pre class="line-numbers language-javascript" data-src="20_markers/map-01-initial.js"></pre>
+
+            <h2>Result</h2>
+            <p>
+                Let's take a look at the
+                <a href="20_markers/index.html" target="_blank">result here</a>.
+            </p>
+
+
+
+            <h2>map.js - Fitting to Bounds</h2>
+            <p>
+                So far, so good, but notice how we have the location and zoom
+                level set by hand? What if we have data for a different area?
+                If we tweak our code just a bit, we can have leaflet zoom to
+                fit all of our markers automatically. The trick is to render
+                the markers to a Feature Group. Watch the variable "markerLayer"
+                in the code below.
+            </p>
+            <pre class="line-numbers language-javascript" data-src="20_markers/map-02-bounds.js"></pre>
+
+            <h2>Result</h2>
+            <p>
+                Let's take a look at the
+                <a href="20_markers/index.html" target="_blank">result here</a>.
+            </p>
+
+
+
+            <h2>map.js - Custom Markers</h2>
+            <p>
+                Ok, but all of those blue markers are kind of... boring? Let's
+                add some pizzaz (any designers in the room may want to close their eyes).
+            </p>
+            <pre class="line-numbers language-javascript" data-src="20_markers/map-03-customicons.js"></pre>
+            <h2>Result</h2>
+            <p>
+                Let's take a look at the
+                <a href="20_markers/index.html" target="_blank">result here</a>.
+            </p>
+
+
+            <h2>Further Reading</h2>
+            <ul>
+                <li><a href="http://leafletjs.com/examples/custom-icons.html">Leaflet Custom Icon Example</a></li>
+                <li><a href="http://leafletjs.com/reference.html#icon">Icon Reference</a></li>
+                <li><a href="http://leafletjs.com/reference.html#marker">Marker Reference</a></li>
+            </ul>
+
+            <div class="tutbuttons">
+                <a class="tutbutton" href="11_tilesources.html">Previous</a>
+                <a class="tutbutton" href="21_popups.html">Next</a>
+            </div>
+
+        </section>
+
+    </body>
+</html>
