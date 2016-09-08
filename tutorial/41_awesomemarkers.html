@@ -40,53 +40,57 @@
         <!-- Navigation End -->
 
         <section class="content">
-            <h1>Hello World</h1>
-
+            <h1>Plugins - Awesome Markers</h1>
             <p>
-                Before we get started with leaflet, it's important to understand
-                the starter files and how things are wired together. Let's take
-                a moment to go through the files.
+                Leaflet's default markers can get pretty boring after awhile.
+                Besides just wanting a different look, you may have point data
+                that should be represented differently depending on a specific
+                data attribute (restaurants vs gas stations on your phone's map
+                for example). A handy plugin that allows you to tweak Leaflet's
+                markers is Awesome Markers.
             </p>
+            <p>
+                Awesome Markers allows you to change the icon and color of
+                each marker. It does this by using an icon font such as
+                Font Awesome or the Glyphicon set bundled with Bootstrap.
+            </p>
+
 
             <h2>index.html</h2>
             <p>
-                This file contains the markup that the browser will display. In
-                the head section, we include the Leaflet and jQuery libraries, as
-                well as our own code contained in map.js. The body section is
-                light containing only a single div element with the id of map.
-                For this course, we'll be doing full screen maps, but leaflet
-                doesn't care about the size of the element it is rendered to. You
-                can use these techniques to integrate maps into any web page you want.
+                Remember, to use a plugin, we must include the files we need in
+                the head section of our html file. Since we're using both
+                FontAwesome and Awesome Markers for this example, we'll need to
+                include both of them.
             </p>
-            <pre class="line-numbers language-html" data-src="10_hellomap/index.html"></pre>
+            <pre class="line-numbers language-html" data-src="41_awesomemarkers/index.html"></pre>
+
 
             <h2>map.js</h2>
             <p>
-                This file contains the JavaScript we'll be writing to display
-                our maps. For now, we'll just initialize the map with some
-                Open Street Map tiles and center the view on Dayton.
+                This is our Skyline map from before. The changes for using Awesome Markers
+                start on line 55.
             </p>
-            <pre class="line-numbers language-javascript" data-src="10_hellomap/map.js"></pre>
+            <pre class="line-numbers language-javascript" data-src="41_awesomemarkers/map.js"></pre>
 
 
             <h2>Result</h2>
             <p>
-                That's all it takes to get a map rendered to your webpage. Leaflet
-                has great support for both desktop and mobile devices.
                 Let's take a look at the
-                <a href="10_hellomap/index.html" target="_blank">result here</a>.
+                <a href="41_awesomemarkers/index.html" target="_blank">result here</a>.
             </p>
+
 
 
             <h2>Further Reading</h2>
             <ul>
-                <li><a href="http://leafletjs.com/examples.html">Leaflet Examples</a></li>
-                <li><a href="http://leafletjs.com/reference.html">Leaflet API Documentation</a></li>
+                <li><a href="http://leafletjs.com/plugins.html">Leaflet Plugins</a></li>
+                <li><a href="https://github.com/lvoogdt/Leaflet.awesome-markers">Awesome Markers</a></li>
             </ul>
 
             <div class="tutbuttons">
-                <a class="tutbutton" href="03_devenv.html">Previous</a>
-                <a class="tutbutton" href="11_tilesources.html">Next</a>
+                <a class="tutbutton" href="40_markercluster.html">Previous</a>
+                <a class="tutbutton" href="41_heatmap.html">Next</a>
             </div>
 
         </section>
