@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Web Mapping Workshop</title>
+
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/workshop.css" />
+
+        <!-- Prism (syntax highlighting) -->
+        <link rel="stylesheet" href="../lib/prism/prism.css" />
+        <script src="../lib/prism/prism.js"></script>
+    </head>
+
+    <body>
+
+        <!-- Navigation Start -->
+        <nav class="navigation">
+            <ul>
+                <li><a href="00_introductions.html">Introductions</a></li>
+                <li><a href="01_intro2mapping.html">Introduction to Web Mapping</a></li>
+                <li><a href="02_intro2leaflet.html">Introduction to Leaflet</a></li>
+                <li><a href="03_devenv.html">Development Environment</a></li>
+                <li><a href="10_hellomap.html">Making a Map</a></li>
+                <li><a href="11_tilesources.html">Base Maps</a></li>
+                <li><a href="20_markers.html">Markers</a></li>
+                <li><a href="21_popups.html">Pop Ups</a><li>
+                <li><a href="30_geojson.html">GeoJSON</a></li>
+                <li><a href="40_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="41_heatmap.html">Plugins - Heatmap</a></li>
+                <!-- <li>Civic Hacking &amp; Code for Dayton</li>
+                <li>Data - Dayton</li>
+                <li>Data - National</li>
+                <li>Data - Global</li>
+                <li>The Starter Project</li>
+                <li>Workshop</li>
+                <li>Resources</li> -->
+            </ul>
+        </nav>
+        <!-- Navigation End -->
+
+        <section class="content">
+            <h1>Plugins - Marker Cluster</h1>
+            <p>
+                Leaflet was designed to be lightweight and easy to use. It is
+                also extensible, and the community has developed dozens of
+                useful plugins. We're going to cover a few of the most common
+                here during the workshop, the first being Marker Cluster.
+            </p>
+            <p>
+                Marker Cluster is a plugin for adding animated marker clusters to
+                your maps. Earlier, when we built our Skyline locations map, many
+                of the markers overlapped with one another when we were zoomed out.
+                The Marker Cluster plugin will improve the usability of the map
+                when you have several markers clustered together.
+            </p>
+
+            <h2>index.html</h2>
+            <p>
+                To use a plugin, we have to include the plugin files. For Marker Cluster,
+                we need to add a CSS and JavaScript file to the head section of our
+                index.html.
+            </p>
+            <pre class="line-numbers language-html" data-src="40_markercluster/index.html"></pre>
+
+
+            <h2>map.js</h2>
+            <p>
+                Next, instead of adding our markers to an L.featureGroup, we'll add them to
+                an L.markerClusterGroup (provided by the plugin). This is a one line change
+                from our popup example we created earlier.
+            </p>
+            <pre class="line-numbers language-javascript" data-src="40_markercluster/map.js"></pre>
+
+
+            <h2>Result</h2>
+            <p>
+                Let's take a look at the
+                <a href="40_markercluster/index.html" target="_blank">result here</a>.
+            </p>
+
+
+
+            <h2>Further Reading</h2>
+            <ul>
+                <li><a href="http://leafletjs.com/plugins.html">Leaflet Plugins</a></li>
+                <li><a href="https://github.com/Leaflet/Leaflet.markercluster">Marker Cluster</a></li>
+            </ul>
+
+            <div class="tutbuttons">
+                <a class="tutbutton" href="30_geojson.html">Previous</a>
+                <a class="tutbutton" href="41_heatmap.html">Next</a>
+            </div>
+
+        </section>
+
+    </body>
+</html>
