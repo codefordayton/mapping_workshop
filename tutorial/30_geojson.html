@@ -40,43 +40,51 @@
         <!-- Navigation End -->
 
         <section class="content">
-            <h1>Base Maps</h1>
-
+            <h1>GeoJSON</h1>
             <p>
-                You have several options for your base map. There are many free
-                (and several paid) providers for map tiles. Also, this is a good
-                time to talk about Mapbox. They are a commerical mapping company
-                with several tools for making maps. You can design your own
-                map tiles using <a href="https://www.mapbox.com/mapbox-studio/">Mapbox Studio</a>
-                and use them with leaflet. Doing so will require you to create an
-                account with them and getting an API key.
+                GeoJSON is a JSON based format for encoding geospatial data. It
+                supports several geometry types including points, line strings,
+                and polygons. Since it is JSON, it is well suited for use with
+                JavaScript and Leaflet has built in support for rendering data
+                in this format.
+            </p>
+            <p>
+                You'll find lots of data out in the wild formatted in GeoJSON.
+                It is a common format and much of the GIS software and databases
+                used by Government can export data this way. See the resources
+                section below for some examples.
             </p>
 
             <h2>map.js</h2>
             <p>
-                Here are a few options from <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">http://leaflet-extras.github.io/leaflet-providers/preview/</a>,
-                a GitHub repository listing several different free options for
-                map tile providers.
-            </p>
-            <pre class="line-numbers language-javascript" data-src="11_tilesources/map.js"></pre>
 
+            </p>
+            <pre class="line-numbers language-javascript" data-src="30_geojson/map-01-initial.js"></pre>
 
             <h2>Result</h2>
             <p>
                 Let's take a look at the
-                <a href="11_tilesources/index.html" target="_blank">result here</a>.
+                <a href="30_geojson/index.html" target="_blank">result here</a>.
             </p>
 
+            <h2>map.js - popups</h2>
+            <p>
+                Now that we can simply hand off the file to Leaflet to add to the
+                map, we have no place to do any processing of the individual
+                items in the list (to bind a popup for example). To add
+                popups for each county, we'll need to put some logic into a
+                onEachFeature JavaScript function and pass it into Leaflet.
+            </p>
+            <pre class="line-numbers language-javascript" data-src="30_geojson/map-02-popups.js"></pre>
 
             <h2>Further Reading</h2>
             <ul>
-                <li><a href="http://leaflet-extras.github.io/leaflet-providers/preview">Leaflet Map Providers</a></li>
-                <li><a href="https://www.mapbox.com">Mapbox</a></li>
+                <li><a href="https://catalog.data.gov/dataset?res_format=geojson">Data.gov GeoJSON</a></li>
             </ul>
 
             <div class="tutbuttons">
-                <a class="tutbutton" href="10_hellomap.html">Previous</a>
-                <a class="tutbutton" href="20_markers.html">Next</a>
+                <a class="tutbutton" href="21_popups.html">Previous</a>
+                <a class="tutbutton" href="40_markercluster.html">Next</a>
             </div>
 
         </section>
