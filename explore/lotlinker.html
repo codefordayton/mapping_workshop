@@ -21,15 +21,17 @@
                 <li><a href="../tutorial/11_tilesources.html">Base Maps</a></li>
                 <li><a href="../tutorial/20_markers.html">Markers</a></li>
                 <li><a href="../tutorial/21_popups.html">Pop Ups</a><li>
-                <li><a href="../tutorial/30_linestrings.html">Line Data</a></li>
-                <li><a href="../tutorial/31_polygons.html">Polygons</a></li>
-                <li><a href="../tutorial/40_plugins_markercluster.html">Plugins - Marker Clustering</a></li>
-                <li><a href="../tutorial/41_heatmap.html">Plugins - Heatmap</a></li>
+                <li><a href="../tutorial/30_geojson.html">GeoJSON</a></li>
+                <li><a href="../tutorial/40_markercluster.html">Plugins - Marker Clustering</a></li>
+                <li><a href="../tutorial/41_awesomemarkers.html">Plugins - Awesome Markers</a></li>
+            </ul>
+            <hr />
+            <ul>
                 <li><a href="../explore/cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
                 <li>
                     <a href="../explore/index.html">Further Explorations</a>
                     <ul>
-                        <li><a href="../explore/lotlinker.html">LotLinker</a></li>
+                        <li><a class="selected" href="../explore/lotlinker.html">LotLinker</a></li>
                         <li><a href="../explore/neighborhoods.html">Neighborhoods</a></li>
                         <li><a href="../explore/esri.html">ESRI Data</a></li>
                         <li><a href="../explore/airports.html">Airports</a></li>
@@ -37,9 +39,6 @@
                         <li><a href="../explore/earthquake.html">Earthquakes</a></li>
                     </ul>
                 </li>
-                <!-- <li>The Starter Project</li>
-                <li>Workshop</li>
-                <li>Resources</li>-->
             </ul>
         </nav>
         <!-- Navigation End -->
@@ -91,8 +90,8 @@
                 return '<h3>' + props.street + '</h3>' +
                        '<p>Parcel ID: <a href="http://www.mctreas.org/master.cfm?parid=' +
                            props.parcelid.replace(" ", "%20") +
-                           '&taxyr=2015&own1=SMITH">' + props.parcelid + '</a></p>' + 
-                           '<p>Claimed: ' + (props.claimed ? "Yes" : "No") + '</p>' + 
+                           '&taxyr=2015&own1=SMITH">' + props.parcelid + '</a></p>' +
+                           '<p>Claimed: ' + (props.claimed ? "Yes" : "No") + '</p>' +
                            '<a href="' + props.url + '">Details</a>';
             }
 
@@ -113,4 +112,3 @@
         </script>
     </body>
 </html>
-
