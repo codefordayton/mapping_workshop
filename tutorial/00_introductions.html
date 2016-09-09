@@ -1,94 +1,112 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Web Mapping Workshop</title>
+<head>
+    <title>Web Mapping Workshop</title>
 
-        <link rel="stylesheet" href="../styles/reset.css" />
-        <link rel="stylesheet" href="../styles/workshop.css" />
-    </head>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/workshop.css" />
+</head>
 
-    <body>
+<body>
 
-        <!-- Navigation Start -->
-        <nav class="navigation">
-            <ul>
-                <li><a class="selected" href="../tutorial/00_introductions.html">Introductions</a></li>
-                <li><a href="../tutorial/01_intro2mapping.html">Introduction to Web Mapping</a></li>
-                <li><a href="../tutorial/02_intro2leaflet.html">Introduction to Leaflet</a></li>
-                <li><a href="../tutorial/03_devenv.html">Development Environment</a></li>
-                <li><a href="../tutorial/10_hellomap.html">Making a Map</a></li>
-                <li><a href="../tutorial/11_tilesources.html">Base Maps</a></li>
-                <li><a href="../tutorial/20_markers.html">Markers</a></li>
-                <li><a href="../tutorial/21_popups.html">Pop Ups</a><li>
-                <li><a href="../tutorial/30_geojson.html">GeoJSON</a></li>
-                <li><a href="../tutorial/40_markercluster.html">Plugins - Marker Clustering</a></li>
-                <li><a href="../tutorial/41_awesomemarkers.html">Plugins - Awesome Markers</a></li>
-            </ul>
-            <hr />
-            <ul>
-                <li><a href="../explore/cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
+    <!-- Navigation Start -->
+    <nav class="navigation">
+        <ul>
+            <li><a class="selected" href="../tutorial/00_introductions.html">Introductions</a></li>
+            <li><a href="../tutorial/01_intro2mapping.html">Introduction to Web Mapping</a></li>
+            <li><a href="../tutorial/02_intro2leaflet.html">Introduction to Leaflet</a></li>
+            <li><a href="../tutorial/03_devenv.html">Development Environment</a></li>
+            <li><a href="../tutorial/10_hellomap.html">Making a Map</a></li>
+            <li><a href="../tutorial/11_tilesources.html">Base Maps</a></li>
+            <li><a href="../tutorial/20_markers.html">Markers</a></li>
+            <li><a href="../tutorial/21_popups.html">Pop Ups</a>
                 <li>
-                    <a href="../explore/index.html">Further Explorations</a>
-                    <ul>
-                        <li><a href="../explore/lotlinker.html">LotLinker</a></li>
-                        <li><a href="../explore/neighborhoods.html">Neighborhoods</a></li>
-                        <li><a href="../explore/esri.html">ESRI Data</a></li>
-                        <li><a href="../explore/airports.html">Airports</a></li>
-                        <li><a href="../explore/college.html">Colleges</a></li>
-                        <li><a href="../explore/earthquake.html">Earthquakes</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <!-- Navigation End -->
+                    <li><a href="../tutorial/30_geojson.html">GeoJSON</a></li>
+                    <li><a href="../tutorial/40_markercluster.html">Plugins - Marker Clustering</a></li>
+                    <li><a href="../tutorial/41_awesomemarkers.html">Plugins - Awesome Markers</a></li>
+        </ul>
+        <hr />
+        <ul>
+            <li><a href="../explore/cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
+            <li>
+                <a href="../explore/index.html">Further Explorations</a>
+                <ul>
+                    <li><a href="../explore/lotlinker.html">LotLinker</a></li>
+                    <li><a href="../explore/neighborhoods.html">Neighborhoods</a></li>
+                    <li><a href="../explore/esri.html">ESRI Data</a></li>
+                    <li><a href="../explore/airports.html">Airports</a></li>
+                    <li><a href="../explore/college.html">Colleges</a></li>
+                    <li><a href="../explore/earthquake.html">Earthquakes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- Navigation End -->
 
-        <section class="content">
-            <h1>Introductions</h1>
+    <section class="content">
+        <h1>Introductions</h1>
 
-            <p>
-                This workshop was organized and taught by members of the three
-                Dayton area meetups listed below. If you have fun during this
-                workshop and want to learn more, please consider joining. The
-                tech community in Dayton is extrordinarily vibrant and these
-                meetups are a great chance to network and learn along with
-                some of the best programmers in the area.
-            </p>
-            <hr  />
+        <p>
+            This workshop was organized and taught by members of the three Dayton area meetups listed below. If you have fun during this workshop and want to learn more, please consider joining. The tech community in Dayton is extrordinarily vibrant and these meetups
+            are a great chance to network and learn along with some of the best programmers in the area.
+        </p>
+        <hr />
 
-            <h2><a href="http://codefordayton.org">Code for Dayton</a></h2>
-            <p>
-                <img src="../images/cfd.png" class="float-left" height="48" title="Code for Dayton" />
-                We are a Code for America Brigade, which means we're volunteers that contribute our talents
-                toward improving the way our local governments and community organizations use the web.
-            </p>
-            <hr />
+        <h2>Code for Dayton</h2>
+        <p>
+            <a href="http://codefordayton.org" target="_blank"><img src="../images/cfd.png" class="float-left" width="185" title="Code for Dayton" /></a> We are a <a href="https://www.codeforamerica.org/brigade/">Code for America Brigade</a>, which means we're volunteers that contribute our talents toward
+            improving the way our local governments and community organizations use the web to interact with their constituents.
+        </p>
+        <p>
+            Our goal is two fold - we increase citizen engagement with municipal government, and show government and community organizations what is possible with open source and open data.
+        </p>
+        <hr />
 
-            <h2><a href="http://gdidayton.com">Girl Develop It</a></h2>
-            <p>
-                <img src="../images/gdi-dayton-logo.png"  class="float-left" height="48" title="Girl Develop It" />
-                Girl Develop It is a nonprofit organization that exists to provide affordable and judgment-free opportunities
-                for women interested in learning web and software development. Through in-person classes and community support,
-                 Girl Develop It helps women of diverse backgrounds achieve their technology goals and build confidence in their
-                 careers and their every day lives.
-            </p>
-            <hr />
+        <h2>Girl Develop It Dayton</h2>
+        <p>
+            <a href="http://gdidayton.com" target="_blank"><img src="../images/gdi-dayton-logo.png" class="float-left" width="185" title="Girl Develop It" /></a> GDI Dayton is a local chapter of a national non-profit <a href="http://www.girldevelopit.com">Girl Develop It</a>, that began as a call
+            to action for women, by women who were tired of the low representation of women in tech, and wanted to make a difference. Our vision is to create a network of empowered women who feel confident in their abilities to code and build beautiful
+            web and mobile applications. By teaching women around the world from diverse backgrounds to learn software development, we can help women improve their careers and confidence in their everyday lives.
+        </p>
+        <p>
+            We are committed to making sure women of all races, education levels, income and upbringing can build confidence in their skill set to develop web and mobile applications. We service that mission by offering events and affordable classes and we pride
+            ourselves on being inclusive of all gender identities and ethnicities.
 
-            <h2><a href="http://daytondv.org">Dayton Data Visualization</a></h2>
-            <p>
-                <img src="../images/daytondv-color.svg" class="float-left" height="48" title="Dayton Data Visualization" />
-                The Dayton Data Visualization meetup was started by Michael Bowman and Chris Dickman of Applied Information
-                Sciences in November of 2014 as a way to gather Dayton area data visualization experts to network and share
-                knowledge. Since then, we’ve grown to 300 members and have hosted a number of great speakers on a wide variety
-                of topics.
-            </p>
-            <hr />
+        </p>
+        <hr />
 
-            <div class="tutbuttons">
-                <a class="tutbutton" href="01_intro2mapping.html">Next</a>
-            </div>
+        <h2>Dayton Data Visualization</h2>
+        <p>
+            <a href="http://daytondv.org" target="_blank"> <img src="../images/daytondv-color.svg" class="float-left" width="185" title="Dayton Data Visualization" /> </a>The Dayton Data Visualization meetup was started by Michael Bowman and Chris Dickman of <a href="http://www.appliedis.com">Applied Information Sciences</a>            in November of 2014 as a way to gather Dayton area data visualization experts to network and share knowledge. Since then, we've grown to 300 members and have hosted a number of great speakers on a wide variety of topics.
+        </p>
+        We meet quarterly to have discussions around anything realted to data visualizations, from libraries and frameworks to designa nd storytelling. Topics will include (but not limited to): Infographic Design and Development, Web Mapping, D3.js, R, Tableau,
+        Matlab, Processing, Hadoop, Data Mining, etc... Anything to do with the design/development of awesome visualizations!
+        <p>
 
-        </section>
+        </p>
+        <hr />
 
-    </body>
+        <h2>Instructor and TAs</h2>
+        <h3>Michael Bowman</h3>
+        <p>
+          A short bio that tells us why we should be listening to you. a link to your social media of choice or github is noce too.
+        </p>
+        <h3>David Best</h3>
+        <p>
+          Other people can have bios too, but its okay to not have TA bios. Just need to list the important people here.
+        </p>
+        <h3>Jeff Smith</h3>
+        <h3>Matt Anderson</h3>
+
+        <hr />
+
+        <div class="tutbuttons">
+            <a class="tutbutton" href="01_intro2mapping.html">Next</a>
+        </div>
+
+    </section>
+
+</body>
+
 </html>

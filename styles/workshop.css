@@ -25,7 +25,7 @@ body {
 
 a {
     color: #4CAF50;
-    font-weight: bold;
+    //font-weight: bold;
 }
 a:hover {
     color: #6ccf70;
@@ -41,6 +41,9 @@ h1 {font-size: 300%;}
 h2 {font-size: 200%;}
 h3 {font-size: 150%;}
 
+h2 a{
+  font-weight: normal;
+}
 
 hr {
     background-color: transparent;
@@ -148,5 +151,13 @@ blockquote {
     margin-bottom: 1em;
     margin-left: 40px;
     margin-right: 40px;
+}
+
+blockquote p {
+  display: inline;
+}
+blockquote cite{
+  font-style: italic;
+  display:inherit;
 }
 }
