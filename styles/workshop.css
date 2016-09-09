@@ -172,3 +172,8 @@ strong {
 .instructor {
     clear: both;
 }
+
+.page {
+    margin: 0 auto;
+    max-width: 768px;
+}
