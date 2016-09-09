@@ -1,58 +1,67 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Web Mapping Workshop - Civic Hacking &amp; Code For Dayton</title>
+<head>
+    <title>Web Mapping Workshop - Civic Hacking &amp; Code For Dayton</title>
 
-        <link rel="stylesheet" href="../styles/reset.css" />
-        <link rel="stylesheet" href="../styles/workshop.css" />
-    </head>
-    <body>
-        <!-- Navigation Start -->
-        <nav class="navigation">
-            <ul>
-                <li><a href="../tutorial/00_introductions.html">Introductions</a></li>
-                <li><a href="../tutorial/01_intro2mapping.html">Introduction to Web Mapping</a></li>
-                <li><a href="../tutorial/02_intro2leaflet.html">Introduction to Leaflet</a></li>
-                <li><a href="../tutorial/03_devenv.html">Development Environment</a></li>
-                <li><a href="../tutorial/10_hellomap.html">Making a Map</a></li>
-                <li><a href="../tutorial/11_tilesources.html">Base Maps</a></li>
-                <li><a href="../tutorial/20_markers.html">Markers</a></li>
-                <li><a href="../tutorial/21_popups.html">Pop Ups</a><li>
-                <li><a href="../tutorial/30_geojson.html">GeoJSON</a></li>
-                <li><a href="../tutorial/40_markercluster.html">Plugins - Marker Clustering</a></li>
-                <li><a href="../tutorial/41_awesomemarkers.html">Plugins - Awesome Markers</a></li>
-            </ul>
-            <hr />
-            <ul>
-                <li><a class="selected" href="../explore/cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/workshop.css" />
+</head>
+
+<body>
+    <!-- Navigation Start -->
+    <nav class="navigation">
+        <ul>
+            <li><a href="../tutorial/00_introductions.html">Introductions</a></li>
+            <li><a href="../tutorial/01_intro2mapping.html">Introduction to Web Mapping</a></li>
+            <li><a href="../tutorial/02_intro2leaflet.html">Introduction to Leaflet</a></li>
+            <li><a href="../tutorial/03_devenv.html">Development Environment</a></li>
+            <li><a href="../tutorial/10_hellomap.html">Making a Map</a></li>
+            <li><a href="../tutorial/11_tilesources.html">Base Maps</a></li>
+            <li><a href="../tutorial/20_markers.html">Markers</a></li>
+            <li><a href="../tutorial/21_popups.html">Pop Ups</a>
                 <li>
-                    <a href="../explore/index.html">Further Explorations</a>
-                    <ul>
-                        <li><a href="../explore/lotlinker.html">LotLinker</a></li>
-                        <li><a href="../explore/neighborhoods.html">Neighborhoods</a></li>
-                        <li><a href="../explore/esri.html">ESRI Data</a></li>
-                        <li><a href="../explore/airports.html">Airports</a></li>
-                        <li><a href="../explore/college.html">Colleges</a></li>
-                        <li><a href="../explore/earthquake.html">Earthquakes</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <!-- Navigation End -->
+                    <li><a href="../tutorial/30_geojson.html">GeoJSON</a></li>
+                    <li><a href="../tutorial/40_markercluster.html">Plugins - Marker Clustering</a></li>
+                    <li><a href="../tutorial/41_awesomemarkers.html">Plugins - Awesome Markers</a></li>
+        </ul>
+        <hr />
+        <ul>
+            <li><a class="selected" href="../explore/cfd.html">Civic Hacking &amp; Code for Dayton</a></li>
+            <li>
+                <a href="../explore/index.html">Further Explorations</a>
+                <ul>
+                    <li><a href="../explore/lotlinker.html">LotLinker</a></li>
+                    <li><a href="../explore/neighborhoods.html">Neighborhoods</a></li>
+                    <li><a href="../explore/esri.html">ESRI Data</a></li>
+                    <li><a href="../explore/airports.html">Airports</a></li>
+                    <li><a href="../explore/college.html">Colleges</a></li>
+                    <li><a href="../explore/earthquake.html">Earthquakes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- Navigation End -->
 
-        <section class="content">
-            <h1>Civic Hacking &amp; Code For Dayton</h1>
-            <h2>What is Civic Hacking?</h2>
-            <p>Stated simply:</p>
-                <blockquote cite="https://opengovdata.io/2014/civic-hacking/">Civic hacking is a creative and often technological approach to solving civic problems.<br />
-                -<a href="https://opengovdata.io/2014/civic-hacking/">Open Government Data: The Book</a></blockquote>
-            <p>The goal is two-fold: <b>to get technologists more involved with local government and to educate local government about what is possible with open data and open source technologies.</b></p>
+    <section class="content">
+        <h1>Civic Hacking &amp; Code For Dayton</h1>
+        <h2>What is Civic Hacking?</h2>
+        <p>Stated simply:</p>
+        <blockquote cite="https://opengovdata.io/2014/civic-hacking/">
+            <p>
+                Civic hacking is a creative and often technological approach to solving civic problems.
+            </p>
+            <cite><a href="https://opengovdata.io/2014/civic-hacking/">Open Government Data: The Book</a></cite>
+        </blockquote>
+        <p>The goal is two-fold: <b>to get technologists more involved with local government and to educate local government about what is possible with open data and open source technologies.</b></p>
 
-            <h2>Who is <a href="http://codefordayton.org/">Code For Dayton</a>?</h2>
-            <p>&ldquo;Civic Problems&rdquo; is big and vague, but we interpret it to mean community-facing issues with municipal government and local non-profits. We aren't interested in building new infrastructure for either group, but we will help them to open up their data or make it more accessible.</p>
+        <h2>Who is <a href="http://codefordayton.org/">Code For Dayton</a>?</h2>
+        <p>&ldquo;Civic Problems&rdquo; is big and vague, but we interpret it to mean community-facing issues with municipal government and local non-profits. We aren't interested in building new infrastructure for either group, but we will help them to
+            open up their data or make it more accessible.</p>
 
-            <p>Many of our projects &ldquo;Default to Map&rdquo;. The map is a common mechanism for displaying local data sets, so many of our projects start there. We are always looking for more folks who are interested in volunteering their time and skills. If you'd like to get involved, I urge you to drop us a message at <a href="mailto:team@codefordayton.org">team@codefordayton.org</a> or check out our work on <a href="https://github.com/codefordayton">GitHub</a>.</p>
-        </section>
-    </body>
+        <p>Many of our projects &ldquo;Default to Map&rdquo;. The map is a common mechanism for displaying local data sets, so many of our projects start there. We are always looking for more folks who are interested in volunteering their time and skills.
+            If you'd like to get involved, I urge you to drop us a message at <a href="mailto:team@codefordayton.org">team@codefordayton.org</a> or check out our work on <a href="https://github.com/codefordayton">GitHub</a>.</p>
+    </section>
+</body>
+
 </html>
