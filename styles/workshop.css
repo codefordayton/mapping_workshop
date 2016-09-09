@@ -31,6 +31,23 @@ a:hover {
     color: #6ccf70;
 }
 
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+blockquote p {
+  display: inline;
+}
+
+blockquote cite{
+  font-style: italic;
+  display:inherit;
+}
+
 h1, h2, h3, h4, h5, h6, strong {
     color: #455A64;
     /* Helvetica/Arial-based sans serif stack */
@@ -145,19 +162,13 @@ strong {
     list-style-position: inside;
 }
 
-blockquote {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 40px;
-    margin-right: 40px;
+.headshot {
+    border-radius: 50%;
+    float: left;
+    height: 128px;
+    width: 128px;
 }
 
-blockquote p {
-  display: inline;
-}
-blockquote cite{
-  font-style: italic;
-  display:inherit;
-}
+.instructor {
+    clear: both;
 }
