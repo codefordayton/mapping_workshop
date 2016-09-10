@@ -7,30 +7,41 @@
 
 ## Date
 Saturday, September 10th, 2016
+10:00am - 2:00pm
 
 ## Location
 The Entrepreneurs Center
+714 E Monument Avenue
+Dayton, OH 45402
 
 ## Cost
 $5.00 - Lunch Provided
 
 ## Materials
-- [Workshop Website](http://codefordayton.github.io/mapping_workshop)
+- [Workshop Website](http://codefordayton.org/mapping_workshop)
 - [Starter Project (this repo - master branch)](https://github.com/codefordayton/mapping_workshop)
 
 ## Agenda
-    - Introduction to Web Mapping
-    - Introduction to Leaflet
-    - Getting familiar with the starter project
-    - Making a map
-    - Points - putting markers on the map (marker + pop ups)
-    - Feature Data - polygons, geojson
-    - Time Series with Playback
-    - Plugins - marker clusterer, awesome markers, others?
-    - Other resources
-    - Civic Hacking & CfD
-    - Data Sources - CfD data sources, open data
-    - Workshop
-        - Pick a data set and make a map!
-        - People on hand to assist
-        - Team up or work solo
+- Introductions
+- Introduction to Web Mapping
+- Introduction to Leaflet
+- Development Environment Setup
+- Making a Map
+- Base Maps
+- Markers
+- Pop Ups
+- GeoJSON
+- Plugins
+    - Marker Clustering
+    - Awesome Markers
+- Civic Hacking & CfD
+- Data Sources - CfD data sources, open data
+- Workshop
+    - Pick a data set and make a map!
+    - People on hand to assist
+    - Team up or work solo
+
+## Prerequisites
+- Please bring a laptop to work on.
+- Passing knowledge of HTML and CSS would be helpful
+- Text Editor for Web Development. We'll be using [Atom](http://atom.io)
