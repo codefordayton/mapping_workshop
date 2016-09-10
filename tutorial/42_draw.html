@@ -27,8 +27,8 @@
                 <li><a href="../tutorial/21_popups.html">Pop Ups</a><li>
                 <li><a href="../tutorial/30_geojson.html">GeoJSON</a></li>
                 <li><a href="../tutorial/40_markercluster.html">Plugins - Marker Clustering</a></li>
-                <li><a class="selected" href="../tutorial/41_awesomemarkers.html">Plugins - Awesome Markers</a></li>
-                <li><a href="../tutorial/42_draw.html">Plugins - Draw</a></li>
+                <li><a href="../tutorial/41_awesomemarkers.html">Plugins - Awesome Markers</a></li>
+                <li><a class="selected" href="../tutorial/42_draw.html">Plugins - Draw</a></li>
             </ul>
             <hr />
             <ul>
@@ -49,44 +49,36 @@
         <!-- Navigation End -->
 
         <section class="content">
-            <h1>Plugins - Awesome Markers</h1>
+            <h1>Plugins - Draw</h1>
             <p>
-                Leaflet's default markers can get pretty boring after awhile.
-                Besides just wanting a different look, you may have point data
-                that should be represented differently depending on a specific
-                data attribute (restaurants vs gas stations on your phone's map
-                for example). A handy plugin that allows you to tweak Leaflet's
-                markers is Awesome Markers.
-            </p>
-            <p>
-                Awesome Markers allows you to change the icon and color of
-                each marker. It does this by using an icon font such as
-                Font Awesome or the Glyphicon set bundled with Bootstrap.
+                So far, we've made maps for displaying information, but what
+                about gathering information from the user? With the
+                Leaflet.Draw plugin, we can allow our users to draw shapes on
+                a map to be collected as form inputs or for other purposes.
             </p>
 
 
             <h2>index.html</h2>
             <p>
                 Remember, to use a plugin, we must include the files we need in
-                the head section of our html file. Since we're using both
-                FontAwesome and Awesome Markers for this example, we'll need to
-                include both of them.
+                the head section of our html file.
             </p>
-            <pre class="line-numbers language-html" data-src="41_awesomemarkers/index.html"></pre>
+            <pre class="line-numbers language-html" data-src="42_draw/index.html"></pre>
 
 
             <h2>map.js</h2>
             <p>
-                This is our Skyline map from before. The changes for using Awesome Markers
-                start on line 55.
+                Using this plugin is a little more complicated than the ones we've
+                done so far. We have to add a custom control to the map as well
+                as listen for events on the map for when a draw event has happened.
             </p>
-            <pre class="line-numbers language-javascript" data-src="41_awesomemarkers/map.js"></pre>
+            <pre class="line-numbers language-javascript" data-src="42_draw/map.js"></pre>
 
 
             <h2>Result</h2>
             <p>
                 Let's take a look at the
-                <a href="41_awesomemarkers/index.html" target="_blank">result here</a>.
+                <a href="42_draw/index.html" target="_blank">result here</a>.
             </p>
 
 
@@ -98,8 +90,7 @@
             </ul>
 
             <div class="tutbuttons">
-                <a class="tutbutton" href="40_markercluster.html">Previous</a>
-                <a class="tutbutton" href="42_draw.html">Next</a>
+                <a class="tutbutton" href="41_awesomemarkers.html">Previous</a>
             </div>
 
         </section>
